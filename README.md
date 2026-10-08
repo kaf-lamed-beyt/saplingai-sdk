@@ -1,4 +1,4 @@
-# SaplingSdk SDK
+# SaplingAI SDK
 
 Sapling AI API client, generated from the OpenAPI spec.
 
