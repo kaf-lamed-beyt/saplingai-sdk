@@ -1,0 +1,82 @@
+{
+  "existing": {
+    "proofreading": {
+      "PROOFREADING00": {
+        "auto_apply": true,
+        "include_error_categories": false,
+        "key": "s5c",
+        "lang": "s5d",
+        "return_usage": true,
+        "session_id": "SESSION01",
+        "text": "s60",
+        "user_id": "USER01",
+        "variety": "s62",
+        "edit_hash": "EDIT_HASH01",
+        "id": "PROOFREADING00"
+      },
+      "PROOFREADING01": {
+        "auto_apply": true,
+        "include_error_categories": false,
+        "key": "sb6",
+        "lang": "sb7",
+        "return_usage": true,
+        "session_id": "SESSION01",
+        "text": "sba",
+        "user_id": "USER01",
+        "variety": "sbc",
+        "edit_hash": "EDIT_HASH01",
+        "id": "PROOFREADING01"
+      },
+      "PROOFREADING02": {
+        "auto_apply": true,
+        "include_error_categories": false,
+        "key": "s110",
+        "lang": "s111",
+        "return_usage": true,
+        "session_id": "SESSION01",
+        "text": "s114",
+        "user_id": "USER01",
+        "variety": "s116",
+        "edit_hash": "EDIT_HASH01",
+        "id": "PROOFREADING02"
+      }
+    }
+  },
+  "new": {
+    "proofreading": {
+      "proofreading_ref01": {
+        "auto_apply": true,
+        "include_error_categories": false,
+        "key": "s16a",
+        "lang": "s16b",
+        "return_usage": true,
+        "session_id": "SESSION01",
+        "text": "s16e",
+        "user_id": "USER01",
+        "variety": "s170"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/edits/{edit_hash}/accept": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/edits/{edit_hash}/reject": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/edits": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/spellcheck": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

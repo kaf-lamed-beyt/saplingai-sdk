@@ -1,0 +1,290 @@
+# Entity: file
+
+main: kit: entity: file: {
+
+  alias: field: {}
+
+  fields: {
+    chunks: {
+      h: "Chunks"
+      n: "chunks"
+      r: false
+      t: "`$ARRAY`"
+    }
+    html: {
+      h: "Html"
+      n: "html"
+      r: true
+      t: "`$STRING`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: false
+      sh: "Sapling API key."
+      t: "`$STRING`"
+    }
+    max_length: {
+      h: "Max Length"
+      n: "max_length"
+      r: true
+      sh: "Maximum chunk length in characters."
+      t: "`$INTEGER`"
+    }
+    return_usage: {
+      h: "Return Usage"
+      n: "return_usage"
+      r: false
+      sh: "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…"
+      t: "`$BOOLEAN`"
+    }
+    step_size: {
+      h: "Step Size"
+      n: "step_size"
+      r: false
+      sh: "Characters to advance between chunk starts; 0 means 10% of max_length."
+      t: "`$INTEGER`"
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    usage: {
+      h: "Usage"
+      n: "usage"
+      r: false
+      sh: "Present only when the request sent return_usage: true."
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "file"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "html"
+            "key"
+            "max_length"
+            "return_usage"
+            "step_size"
+          ]
+          co: {
+            id: "POST /api/v1/ingest/chunk_html"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/ingest/chunk_html"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ingest"
+            }
+            {
+              lit: "chunk_html"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "max_length"
+            "return_usage"
+            "step_size"
+            "text"
+          ]
+          co: {
+            id: "POST /api/v1/ingest/chunk_text"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/ingest/chunk_text"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ingest"
+            }
+            {
+              lit: "chunk_text"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/ingest/docx_to_text"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "return_usage"
+                or: "return_usage"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/ingest/docx_to_text"
+          rb: {
+            fields: [
+              {
+                binary: true
+                name: "file"
+              }
+              {
+                binary: true
+                name: "jsonParams"
+              }
+              {
+                name: "return_usage"
+              }
+            ]
+            kind: "multipart"
+            media: "multipart/form-data"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ingest"
+            }
+            {
+              lit: "docx_to_text"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/ingest/pdf_to_text"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "return_usage"
+                or: "return_usage"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/ingest/pdf_to_text"
+          rb: {
+            fields: [
+              {
+                binary: true
+                name: "file"
+              }
+              {
+                binary: true
+                name: "jsonParams"
+              }
+              {
+                name: "return_usage"
+              }
+            ]
+            kind: "multipart"
+            media: "multipart/form-data"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ingest"
+            }
+            {
+              lit: "pdf_to_text"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

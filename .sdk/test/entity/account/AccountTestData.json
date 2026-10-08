@@ -1,0 +1,149 @@
+{
+  "existing": {
+    "account": {
+      "ACCOUNT00": {
+        "accepts": 240,
+        "active_users": {},
+        "by_api_key": {},
+        "by_endpoint": {},
+        "currency": "sf4",
+        "daily_usage": "sf5",
+        "data": {},
+        "edits_accepted": 247,
+        "edits_ignored": 248,
+        "edits_shown": 249,
+        "end_date": "sfa",
+        "end_days_back": 251,
+        "ignores": 252,
+        "interval": "sfd",
+        "key": "sfe",
+        "last_updated": "sff",
+        "monthly_usage": "s100",
+        "quota": 257,
+        "return_usage": true,
+        "start_date": "s103",
+        "start_days_back": 260,
+        "total_characters": 261,
+        "total_cost_usd": 262,
+        "usage": {},
+        "id": "ACCOUNT00"
+      },
+      "ACCOUNT01": {
+        "accepts": 480,
+        "active_users": {},
+        "by_api_key": {},
+        "by_endpoint": {},
+        "currency": "s1e4",
+        "daily_usage": "s1e5",
+        "data": {},
+        "edits_accepted": 487,
+        "edits_ignored": 488,
+        "edits_shown": 489,
+        "end_date": "s1ea",
+        "end_days_back": 491,
+        "ignores": 492,
+        "interval": "s1ed",
+        "key": "s1ee",
+        "last_updated": "s1ef",
+        "monthly_usage": "s1f0",
+        "quota": 497,
+        "return_usage": true,
+        "start_date": "s1f3",
+        "start_days_back": 500,
+        "total_characters": 501,
+        "total_cost_usd": 502,
+        "usage": {},
+        "id": "ACCOUNT01"
+      },
+      "ACCOUNT02": {
+        "accepts": 720,
+        "active_users": {},
+        "by_api_key": {},
+        "by_endpoint": {},
+        "currency": "s2d4",
+        "daily_usage": "s2d5",
+        "data": {},
+        "edits_accepted": 727,
+        "edits_ignored": 728,
+        "edits_shown": 729,
+        "end_date": "s2da",
+        "end_days_back": 731,
+        "ignores": 732,
+        "interval": "s2dd",
+        "key": "s2de",
+        "last_updated": "s2df",
+        "monthly_usage": "s2e0",
+        "quota": 737,
+        "return_usage": true,
+        "start_date": "s2e3",
+        "start_days_back": 740,
+        "total_characters": 741,
+        "total_cost_usd": 742,
+        "usage": {},
+        "id": "ACCOUNT02"
+      }
+    }
+  },
+  "new": {
+    "account": {
+      "account_ref01": {
+        "accepts": 960,
+        "active_users": {},
+        "by_api_key": {},
+        "by_endpoint": {},
+        "currency": "s3c4",
+        "daily_usage": "s3c5",
+        "data": {},
+        "edits_accepted": 967,
+        "edits_ignored": 968,
+        "edits_shown": 969,
+        "end_date": "s3ca",
+        "end_days_back": 971,
+        "ignores": 972,
+        "interval": "s3cd",
+        "key": "s3ce",
+        "last_updated": "s3cf",
+        "monthly_usage": "s3d0",
+        "quota": 977,
+        "return_usage": true,
+        "start_date": "s3d3",
+        "start_days_back": 980,
+        "total_characters": 981,
+        "total_cost_usd": 982,
+        "usage": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/account/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/reporting/api_endpoint_usage": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/reporting/api_quota_usage": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/reporting/api_usage": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/reporting/api_user_activity": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/account/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

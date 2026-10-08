@@ -1,0 +1,203 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 10
+  metrics: count: path: 48
+  metrics: count: method: 54
+
+  entity: account: {
+    path: "/api/v1/account/status": {
+      action: "status": {}
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/api/v1/reporting/api_endpoint_usage": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/reporting/api_quota_usage": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/reporting/api_usage": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/reporting/api_user_activity": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: analysi: {
+    path: "/api/v1/classify": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/extract": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/inclusive": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/quality": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/sentiment": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/seo": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage`")|top
+    }
+    path: "/api/v1/statistics": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage`")|top
+    }
+    path: "/api/v1/styleguide": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/styleguide/rulesets": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.rulesets`")|top
+      op: remove: method: *DELETE
+    }
+    path: "/api/v1/thesaurus": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/tone": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: custom_filter: {
+    path: "/api/v1/custom_filter": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.custom_filters`")|top
+    }
+    path: "/api/v1/custom_filter/{filter_id}": {
+      rename: param: "filter_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: custom_mapping: {
+    path: "/api/v1/custom_mapping": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.custom_mappings`")|top
+    }
+    path: "/api/v1/custom_mapping/{mapping_id}": {
+      rename: param: "mapping_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: detection: {
+    path: "/api/v1/aidetect": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/docx-aidetect": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage`")|top
+    }
+    path: "/api/v1/langdetect": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/ner": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/pdf-aidetect": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/pii": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage`")|top
+    }
+    path: "/api/v1/profanity": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/safety": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: dictionary: {
+    path: "/api/v1/dictionary": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/api/v1/dictionary/{entry_id}": {
+      rename: param: "entry_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: file: {
+    path: "/api/v1/ingest/chunk_html": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/ingest/chunk_text": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/ingest/docx_to_text": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/ingest/pdf_to_text": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: generation: {
+    path: "/api/v1/complete": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/complete/{completion_hash}/accept": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/paraphrase": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/rephrase": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage`")|top
+    }
+    path: "/api/v1/sentence_split": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/simplify": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/summarize": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/translate": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: proofreading: {
+    path: "/api/v1/edits": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/edits/{edit_hash}/accept": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/edits/{edit_hash}/reject": {
+      op: create: method: *POST
+    }
+    path: "/api/v1/spellcheck": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: service: {
+    path: "/api/v1/liveness": {
+      op: load: method: *GET
+    }
+    path: "/api/v1/version": {
+      op: load: method: *GET
+    }
+  }
+
+}

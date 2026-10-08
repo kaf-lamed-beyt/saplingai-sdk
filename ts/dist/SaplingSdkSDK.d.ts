@@ -1,0 +1,65 @@
+import { AccountEntity } from './entity/AccountEntity';
+import { AnalysiEntity } from './entity/AnalysiEntity';
+import { CustomFilterEntity } from './entity/CustomFilterEntity';
+import { CustomMappingEntity } from './entity/CustomMappingEntity';
+import { DetectionEntity } from './entity/DetectionEntity';
+import { DictionaryEntity } from './entity/DictionaryEntity';
+import { FileEntity } from './entity/FileEntity';
+import { GenerationEntity } from './entity/GenerationEntity';
+import { ProofreadingEntity } from './entity/ProofreadingEntity';
+import { ServiceEntity } from './entity/ServiceEntity';
+export type * from './SaplingSdkTypes';
+import { inspect } from 'node:util';
+import type { Context, Feature } from './types';
+import { config } from './Config';
+import { SaplingSdkEntityBase } from './SaplingSdkEntityBase';
+import { Utility } from './utility/Utility';
+import { BaseFeature } from './feature/base/BaseFeature';
+declare const stdutil: Utility;
+type DirectResult = {
+    ok: false;
+    err: any;
+    status?: undefined;
+    headers?: undefined;
+    data?: undefined;
+} | {
+    ok: boolean;
+    status: number;
+    headers: any;
+    data: any;
+    err?: any;
+};
+declare class SaplingSdkSDK {
+    _mode: string;
+    _options: any;
+    _utility: Utility;
+    _features: Feature[];
+    _rootctx: Context;
+    constructor(options?: any);
+    options(): any;
+    utility(): any;
+    prepare(fetchargs?: any): Promise<any>;
+    direct(fetchargs?: any): Promise<DirectResult>;
+    _rawRequest(fetchargs?: any): Promise<DirectResult>;
+    graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
+    Account(entopts?: Record<string, any>): AccountEntity;
+    Analysi(entopts?: Record<string, any>): AnalysiEntity;
+    CustomFilter(entopts?: Record<string, any>): CustomFilterEntity;
+    CustomMapping(entopts?: Record<string, any>): CustomMappingEntity;
+    Detection(entopts?: Record<string, any>): DetectionEntity;
+    Dictionary(entopts?: Record<string, any>): DictionaryEntity;
+    File(entopts?: Record<string, any>): FileEntity;
+    Generation(entopts?: Record<string, any>): GenerationEntity;
+    Proofreading(entopts?: Record<string, any>): ProofreadingEntity;
+    Service(entopts?: Record<string, any>): ServiceEntity;
+    static test(testoptsarg?: any, sdkoptsarg?: any): SaplingSdkSDK;
+    tester(testopts?: any, sdkopts?: any): SaplingSdkSDK;
+    toJSON(): {
+        name: string;
+    };
+    toString(): string;
+    [inspect.custom](): string;
+}
+declare const SDK: typeof SaplingSdkSDK;
+export { stdutil, config, BaseFeature, SaplingSdkEntityBase, SaplingSdkSDK, SDK, };
+export type { DirectResult };

@@ -1,0 +1,12 @@
+# Entity Models
+
+@"./account.aontu"
+@"./analysi.aontu"
+@"./custom_filter.aontu"
+@"./custom_mapping.aontu"
+@"./detection.aontu"
+@"./dictionary.aontu"
+@"./file.aontu"
+@"./generation.aontu"
+@"./proofreading.aontu"
+@"./service.aontu"

@@ -1,0 +1,269 @@
+# Entity: proofreading
+
+main: kit: entity: proofreading: {
+
+  alias: field: {}
+
+  fields: {
+    auto_apply: {
+      h: "Auto Apply"
+      n: "auto_apply"
+      r: false
+      sh: "If true, the response includes applied_text with all edits applied to the input."
+      t: "`$BOOLEAN`"
+    }
+    include_error_categories: {
+      h: "Include Error Categories"
+      n: "include_error_categories"
+      r: false
+      sh: "Defaults to true."
+      t: "`$BOOLEAN`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: false
+      sh: "Sapling API key."
+      t: "`$STRING`"
+    }
+    lang: {
+      h: "Lang"
+      n: "lang"
+      r: false
+      sh: "ISO 639-1 language code of the text (e.g."
+      t: "`$STRING`"
+    }
+    return_usage: {
+      h: "Return Usage"
+      n: "return_usage"
+      r: false
+      sh: "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…"
+      t: "`$BOOLEAN`"
+    }
+    session_id: {
+      h: "Session Id"
+      n: "session_id"
+      r: false
+      sh: "Optional session identifier used to group feedback events."
+      t: "`$STRING`"
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      r: true
+      sh: "The text to process."
+      t: "`$STRING`"
+    }
+    user_id: {
+      h: "User Id"
+      n: "user_id"
+      r: false
+      sh: "Your identifier for the end user."
+      t: "`$STRING`"
+    }
+    variety: {
+      h: "Variety"
+      n: "variety"
+      r: false
+      sh: "English variety to enforce, e.g."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "proofreading"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "session_id"
+            "user_id"
+          ]
+          co: {
+            id: "POST /api/v1/edits/{edit_hash}/accept"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "edit_hash"
+                or: "edit_hash"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/edits/{edit_hash}/accept"
+          q: {
+            exist: [
+              "edit_hash"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "edits"
+            }
+            {
+              var: "edit_hash"
+            }
+            {
+              lit: "accept"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "session_id"
+            "user_id"
+          ]
+          co: {
+            id: "POST /api/v1/edits/{edit_hash}/reject"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "edit_hash"
+                or: "edit_hash"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/edits/{edit_hash}/reject"
+          q: {
+            exist: [
+              "edit_hash"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "edits"
+            }
+            {
+              var: "edit_hash"
+            }
+            {
+              lit: "reject"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "auto_apply"
+            "include_error_categories"
+            "key"
+            "lang"
+            "return_usage"
+            "session_id"
+            "text"
+            "variety"
+          ]
+          co: {
+            id: "POST /api/v1/edits"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/edits"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "edits"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "lang"
+            "return_usage"
+            "session_id"
+            "text"
+          ]
+          co: {
+            id: "POST /api/v1/spellcheck"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/spellcheck"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "spellcheck"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

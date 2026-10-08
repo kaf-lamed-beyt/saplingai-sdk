@@ -1,0 +1,411 @@
+# Entity: account
+
+main: kit: entity: account: {
+
+  alias: field: {}
+
+  fields: {
+    accepts: {
+      h: "Accepts"
+      n: "accepts"
+      r: false
+      t: "`$INTEGER`"
+    }
+    active_users: {
+      h: "Active Users"
+      n: "active_users"
+      r: false
+      t: "`$OBJECT`"
+    }
+    by_api_key: {
+      h: "By Api Key"
+      n: "by_api_key"
+      r: false
+      t: "`$OBJECT`"
+    }
+    by_endpoint: {
+      h: "By Endpoint"
+      n: "by_endpoint"
+      r: false
+      t: "`$OBJECT`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: false
+      t: "`$STRING`"
+    }
+    daily_usage: {
+      h: "Daily Usage"
+      n: "daily_usage"
+      r: false
+      sh: "Characters per day."
+      t: "`$ANY`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      t: "`$OBJECT`"
+    }
+    edits_accepted: {
+      h: "Edits Accepted"
+      n: "edits_accepted"
+      r: false
+      t: "`$INTEGER`"
+    }
+    edits_ignored: {
+      h: "Edits Ignored"
+      n: "edits_ignored"
+      r: false
+      t: "`$INTEGER`"
+    }
+    edits_shown: {
+      h: "Edits Shown"
+      n: "edits_shown"
+      r: false
+      t: "`$INTEGER`"
+    }
+    end_date: {
+      h: "End Date"
+      n: "end_date"
+      r: false
+      t: "`$STRING`"
+    }
+    end_days_back: {
+      h: "End Days Back"
+      n: "end_days_back"
+      r: false
+      sh: "Window end, in days before today."
+      t: "`$INTEGER`"
+    }
+    ignores: {
+      h: "Ignores"
+      n: "ignores"
+      r: false
+      t: "`$INTEGER`"
+    }
+    interval: {
+      h: "Interval"
+      n: "interval"
+      r: false
+      t: "`$STRING`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: false
+      sh: "Sapling API key."
+      t: "`$STRING`"
+    }
+    last_updated: {
+      h: "Last Updated"
+      n: "last_updated"
+      r: false
+      sh: "ISO timestamp, or null."
+      t: "`$ANY`"
+    }
+    monthly_usage: {
+      h: "Monthly Usage"
+      n: "monthly_usage"
+      r: false
+      sh: "Characters per month."
+      t: "`$ANY`"
+    }
+    quota: {
+      h: "Quota"
+      n: "quota"
+      r: false
+      t: "`$INTEGER`"
+    }
+    return_usage: {
+      h: "Return Usage"
+      n: "return_usage"
+      r: false
+      sh: "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…"
+      t: "`$BOOLEAN`"
+    }
+    start_date: {
+      h: "Start Date"
+      n: "start_date"
+      r: false
+      t: "`$STRING`"
+    }
+    start_days_back: {
+      h: "Start Days Back"
+      n: "start_days_back"
+      r: false
+      sh: "Window start, in days before today."
+      t: "`$INTEGER`"
+    }
+    total_characters: {
+      h: "Total Characters"
+      n: "total_characters"
+      r: false
+      t: "`$INTEGER`"
+    }
+    total_cost_usd: {
+      h: "Total Cost Usd"
+      n: "total_cost_usd"
+      r: false
+      t: "`$NUMBER`"
+    }
+    usage: {
+      h: "Usage"
+      n: "usage"
+      r: false
+      sh: "Present only when the request sent return_usage: true."
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "account"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "key"
+            "return_usage"
+          ]
+          co: {
+            id: "POST /api/v1/account/status"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/account/status"
+          q: {
+            "$action": "status"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "account"
+            }
+            {
+              lit: "status"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "end_days_back"
+            "interval"
+            "key"
+            "return_usage"
+            "start_days_back"
+          ]
+          co: {
+            id: "POST /api/v1/reporting/api_endpoint_usage"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/reporting/api_endpoint_usage"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "reporting"
+            }
+            {
+              lit: "api_endpoint_usage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "end_days_back"
+            "key"
+            "return_usage"
+            "start_days_back"
+          ]
+          co: {
+            id: "POST /api/v1/reporting/api_quota_usage"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/reporting/api_quota_usage"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "reporting"
+            }
+            {
+              lit: "api_quota_usage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "end_days_back"
+            "key"
+            "return_usage"
+            "start_days_back"
+          ]
+          co: {
+            id: "POST /api/v1/reporting/api_usage"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/reporting/api_usage"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "reporting"
+            }
+            {
+              lit: "api_usage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "end_days_back"
+            "key"
+            "return_usage"
+            "start_days_back"
+          ]
+          co: {
+            id: "POST /api/v1/reporting/api_user_activity"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/reporting/api_user_activity"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "reporting"
+            }
+            {
+              lit: "api_user_activity"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/account/status"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: false
+                k: "query"
+                n: "return_usage"
+                or: "return_usage"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/account/status"
+          q: {
+            "$action": "status"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "account"
+            }
+            {
+              lit: "status"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,505 @@
+# Entity: detection
+
+main: kit: entity: detection: {
+
+  alias: field: {}
+
+  fields: {
+    ai_fraction: {
+      h: "Ai Fraction"
+      n: "ai_fraction"
+      r: false
+      sh: "Share (0-1) of the text in sentences scoring >= 0.5; reports partially AI-written documents whose overall score stays below 0.5."
+      t: "`$NUMBER`"
+    }
+    characters: {
+      h: "Characters"
+      n: "characters"
+      r: false
+      t: "`$INTEGER`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: false
+      sh: "Sapling API key."
+      t: "`$STRING`"
+    }
+    labels: {
+      h: "Labels"
+      n: "labels"
+      r: false
+      t: "`$ARRAY`"
+    }
+    redact: {
+      h: "Redact"
+      n: "redact"
+      r: false
+      sh: "If true, the response includes redacted_text with every detected entity replaced by its placeholder."
+      t: "`$BOOLEAN`"
+    }
+    results: {
+      h: "Results"
+      n: "results"
+      r: false
+      sh: "Present only for a batch (`texts`) request: one entry per input text, in input order, each shaped exactly like the single-text response."
+      t: "`$ARRAY`"
+    }
+    return_usage: {
+      h: "Return Usage"
+      n: "return_usage"
+      r: false
+      sh: "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…"
+      t: "`$BOOLEAN`"
+    }
+    score: {
+      h: "Score"
+      n: "score"
+      r: false
+      t: "`$NUMBER`"
+    }
+    score_string: {
+      h: "Score String"
+      n: "score_string"
+      r: false
+      t: "`$STRING`"
+    }
+    segments: {
+      h: "Segments"
+      n: "segments"
+      r: false
+      sh: "Also detect the language of each sentence-ish segment for mixed-language text (default false)."
+      t: "`$BOOLEAN`"
+    }
+    sent_scores: {
+      h: "Sent Scores"
+      n: "sent_scores"
+      r: false
+      sh: "Include per-sentence scores (default true)."
+      t: "`$BOOLEAN`"
+    }
+    sentence_scores: {
+      h: "Sentence Scores"
+      n: "sentence_scores"
+      r: false
+      t: "`$ARRAY`"
+    }
+    spans: {
+      h: "Spans"
+      n: "spans"
+      r: false
+      sh: "true = also return the offending passages as spans with offsets and per-passage scores."
+      t: "`$BOOLEAN`"
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "The text to process."
+      t: "`$STRING`"
+    }
+    texts: {
+      h: "Texts"
+      n: "texts"
+      r: false
+      sh: "Batch form: 1 to 10 texts, each processed with the same options as a single request."
+      t: "`$ARRAY`"
+    }
+    threshold: {
+      h: "Threshold"
+      n: "threshold"
+      r: false
+      sh: "Flagging cut-off on each category score (default 0.5)."
+      t: "`$NUMBER`"
+    }
+    toks: {
+      h: "Toks"
+      n: "toks"
+      r: false
+      t: "`$ARRAY`"
+    }
+    top_k: {
+      h: "Top K"
+      n: "top_k"
+      r: false
+      sh: "Number of top language candidates to return (default 3)."
+      t: "`$INTEGER`"
+    }
+    types: {
+      h: "Types"
+      n: "types"
+      r: false
+      sh: "Entity types to recognize."
+      t: "`$ARRAY`"
+    }
+    usage: {
+      h: "Usage"
+      n: "usage"
+      r: false
+      sh: "Present only when the request sent return_usage: true."
+      t: "`$OBJECT`"
+    }
+    version: {
+      h: "Version"
+      n: "version"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "detection"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "sent_scores"
+            "text"
+            "texts"
+          ]
+          co: {
+            id: "POST /api/v1/aidetect"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/aidetect"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "aidetect"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/docx-aidetect"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "return_usage"
+                or: "return_usage"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/docx-aidetect"
+          rb: {
+            fields: [
+              {
+                binary: true
+                name: "file"
+              }
+              {
+                binary: true
+                name: "jsonParams"
+              }
+              {
+                name: "return_usage"
+              }
+            ]
+            kind: "multipart"
+            media: "multipart/form-data"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "docx-aidetect"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.usage`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "segments"
+            "text"
+            "texts"
+            "top_k"
+          ]
+          co: {
+            id: "POST /api/v1/langdetect"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/langdetect"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "langdetect"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "text"
+            "texts"
+            "types"
+          ]
+          co: {
+            id: "POST /api/v1/ner"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/ner"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ner"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /api/v1/pdf-aidetect"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "return_usage"
+                or: "return_usage"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/pdf-aidetect"
+          rb: {
+            fields: [
+              {
+                binary: true
+                name: "file"
+              }
+              {
+                binary: true
+                name: "jsonParams"
+              }
+              {
+                name: "return_usage"
+              }
+            ]
+            kind: "multipart"
+            media: "multipart/form-data"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "pdf-aidetect"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "redact"
+            "return_usage"
+            "text"
+            "types"
+          ]
+          co: {
+            id: "POST /api/v1/pii"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/pii"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "pii"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.usage`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "text"
+          ]
+          co: {
+            id: "POST /api/v1/profanity"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/profanity"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "profanity"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "spans"
+            "text"
+            "texts"
+            "threshold"
+          ]
+          co: {
+            id: "POST /api/v1/safety"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/safety"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "safety"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

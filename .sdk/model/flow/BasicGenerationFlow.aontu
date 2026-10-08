@@ -1,0 +1,18 @@
+# BasicGenerationFlow
+
+main: kit: flow: BasicGenerationFlow:
+{
+  entity: "generation",
+  kind: "basic",
+  name: "BasicGenerationFlow",
+  step: [
+    {
+      i: {
+        ref: "generation_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicGenerationFlow"
+}

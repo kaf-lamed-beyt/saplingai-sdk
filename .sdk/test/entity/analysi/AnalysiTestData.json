@@ -1,0 +1,196 @@
+{
+  "existing": {
+    "analysi": {
+      "ANALYSI00": {
+        "categories": [],
+        "characters": 271,
+        "context": "s110",
+        "created": false,
+        "created_at": "s112",
+        "fields": [],
+        "key": "s114",
+        "keywords": [],
+        "labels": [],
+        "lang": "s117",
+        "multi_label": true,
+        "name": "s119",
+        "neighbors": [],
+        "query": "s11b",
+        "results": [],
+        "return_usage": false,
+        "rubric": true,
+        "rules": [],
+        "ruleset": "s120",
+        "sentence_scores": false,
+        "suggestions": true,
+        "synonyms": [],
+        "text": "s124",
+        "texts": [],
+        "threshold": 294,
+        "updated_at": "s127",
+        "usage": {},
+        "id": "ANALYSI00"
+      },
+      "ANALYSI01": {
+        "categories": [],
+        "characters": 541,
+        "context": "s21e",
+        "created": false,
+        "created_at": "s220",
+        "fields": [],
+        "key": "s222",
+        "keywords": [],
+        "labels": [],
+        "lang": "s225",
+        "multi_label": true,
+        "name": "s227",
+        "neighbors": [],
+        "query": "s229",
+        "results": [],
+        "return_usage": false,
+        "rubric": true,
+        "rules": [],
+        "ruleset": "s22e",
+        "sentence_scores": false,
+        "suggestions": true,
+        "synonyms": [],
+        "text": "s232",
+        "texts": [],
+        "threshold": 564,
+        "updated_at": "s235",
+        "usage": {},
+        "id": "ANALYSI01"
+      },
+      "ANALYSI02": {
+        "categories": [],
+        "characters": 811,
+        "context": "s32c",
+        "created": false,
+        "created_at": "s32e",
+        "fields": [],
+        "key": "s330",
+        "keywords": [],
+        "labels": [],
+        "lang": "s333",
+        "multi_label": true,
+        "name": "s335",
+        "neighbors": [],
+        "query": "s337",
+        "results": [],
+        "return_usage": false,
+        "rubric": true,
+        "rules": [],
+        "ruleset": "s33c",
+        "sentence_scores": false,
+        "suggestions": true,
+        "synonyms": [],
+        "text": "s340",
+        "texts": [],
+        "threshold": 834,
+        "updated_at": "s343",
+        "usage": {},
+        "id": "ANALYSI02"
+      }
+    }
+  },
+  "new": {
+    "analysi": {
+      "analysi_ref01": {
+        "categories": [],
+        "characters": 1081,
+        "context": "s43a",
+        "created": false,
+        "created_at": "s43c",
+        "fields": [],
+        "key": "s43e",
+        "keywords": [],
+        "labels": [],
+        "lang": "s441",
+        "multi_label": true,
+        "name": "s443",
+        "neighbors": [],
+        "query": "s445",
+        "results": [],
+        "return_usage": false,
+        "rubric": true,
+        "rules": [],
+        "ruleset": "s44a",
+        "sentence_scores": false,
+        "suggestions": true,
+        "synonyms": [],
+        "text": "s44e",
+        "texts": [],
+        "threshold": 1104,
+        "updated_at": "s451",
+        "usage": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/classify": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/extract": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/inclusive": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/quality": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/sentiment": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/seo": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/statistics": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/styleguide": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/styleguide/rulesets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/thesaurus": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/tone": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/styleguide/rulesets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/styleguide/rulesets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

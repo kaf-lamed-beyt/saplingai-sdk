@@ -1,0 +1,59 @@
+# BasicCustomMappingFlow
+
+main: kit: flow: BasicCustomMappingFlow:
+{
+  entity: "custom_mapping",
+  kind: "basic",
+  name: "BasicCustomMappingFlow",
+  step: [
+    {
+      i: {
+        ref: "custom_mapping_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "custom_mapping_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "custom_mapping_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "custom_mapping01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "custom_mapping_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCustomMappingFlow"
+}

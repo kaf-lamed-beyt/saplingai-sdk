@@ -1,0 +1,74 @@
+{
+  "existing": {
+    "custom_mapping": {
+      "CUSTOM_MAPPING00": {
+        "case_sensitive": true,
+        "created_at": "s65",
+        "description": "s66",
+        "entry": "s67",
+        "id": "CUSTOM_MAPPING00",
+        "key": "s69",
+        "mapping": "s6a",
+        "return_usage": false,
+        "updated_at": "s6c",
+        "usage": {}
+      },
+      "CUSTOM_MAPPING01": {
+        "case_sensitive": true,
+        "created_at": "sc9",
+        "description": "sca",
+        "entry": "scb",
+        "id": "CUSTOM_MAPPING01",
+        "key": "scd",
+        "mapping": "sce",
+        "return_usage": false,
+        "updated_at": "sd0",
+        "usage": {}
+      },
+      "CUSTOM_MAPPING02": {
+        "case_sensitive": true,
+        "created_at": "s12d",
+        "description": "s12e",
+        "entry": "s12f",
+        "id": "CUSTOM_MAPPING02",
+        "key": "s131",
+        "mapping": "s132",
+        "return_usage": false,
+        "updated_at": "s134",
+        "usage": {}
+      }
+    }
+  },
+  "new": {
+    "custom_mapping": {
+      "custom_mapping_ref01": {
+        "case_sensitive": true,
+        "created_at": "s191",
+        "description": "s192",
+        "entry": "s193",
+        "key": "s195",
+        "mapping": "s196",
+        "return_usage": false,
+        "updated_at": "s198",
+        "usage": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/custom_mapping": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/custom_mapping": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/custom_mapping/{mapping_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

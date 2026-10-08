@@ -1,0 +1,75 @@
+{
+  "existing": {
+    "file": {
+      "FILE00": {
+        "chunks": [],
+        "html": "s51",
+        "key": "s52",
+        "max_length": 83,
+        "return_usage": true,
+        "step_size": 85,
+        "text": "s56",
+        "usage": {},
+        "id": "FILE00"
+      },
+      "FILE01": {
+        "chunks": [],
+        "html": "sa1",
+        "key": "sa2",
+        "max_length": 163,
+        "return_usage": true,
+        "step_size": 165,
+        "text": "sa6",
+        "usage": {},
+        "id": "FILE01"
+      },
+      "FILE02": {
+        "chunks": [],
+        "html": "sf1",
+        "key": "sf2",
+        "max_length": 243,
+        "return_usage": true,
+        "step_size": 245,
+        "text": "sf6",
+        "usage": {},
+        "id": "FILE02"
+      }
+    }
+  },
+  "new": {
+    "file": {
+      "file_ref01": {
+        "chunks": [],
+        "html": "s141",
+        "key": "s142",
+        "max_length": 323,
+        "return_usage": true,
+        "step_size": 325,
+        "text": "s146",
+        "usage": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/ingest/chunk_html": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/ingest/chunk_text": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/ingest/docx_to_text": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/ingest/pdf_to_text": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

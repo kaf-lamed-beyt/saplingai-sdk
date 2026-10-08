@@ -1,0 +1,244 @@
+# Entity: custom_filter
+
+main: kit: entity: custom_filter: {
+
+  alias: field: {}
+
+  fields: {
+    case_sensitive: {
+      h: "Case Sensitive"
+      n: "case_sensitive"
+      r: false
+      sh: "Whether matching is case sensitive."
+      t: "`$BOOLEAN`"
+    }
+    created_at: {
+      h: "Created At"
+      n: "created_at"
+      r: false
+      sh: "RFC 1123 timestamp, e.g."
+      t: "`$STRING`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    inp: {
+      h: "Inp"
+      n: "inp"
+      r: false
+      sh: "Original text of the suggestion."
+      t: "`$STRING`"
+    }
+    input: {
+      h: "Input"
+      n: "input"
+      r: false
+      t: "`$STRING`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: false
+      sh: "Sapling API key."
+      t: "`$STRING`"
+    }
+    out: {
+      h: "Out"
+      n: "out"
+      r: false
+      sh: "Replacement to suppress."
+      t: "`$STRING`"
+    }
+    output: {
+      h: "Output"
+      n: "output"
+      r: false
+      t: "`$STRING`"
+    }
+    return_usage: {
+      h: "Return Usage"
+      n: "return_usage"
+      r: false
+      sh: "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…"
+      t: "`$BOOLEAN`"
+    }
+    updated_at: {
+      h: "Updated At"
+      n: "updated_at"
+      r: false
+      sh: "RFC 1123 timestamp."
+      t: "`$STRING`"
+    }
+    usage: {
+      h: "Usage"
+      n: "usage"
+      r: false
+      sh: "Present only when the request sent return_usage: true."
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "custom_filter"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "case_sensitive"
+            "inp"
+            "key"
+            "out"
+            "return_usage"
+          ]
+          co: {
+            id: "POST /api/v1/custom_filter"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/custom_filter"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "custom_filter"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/custom_filter"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: false
+                k: "query"
+                n: "return_usage"
+                or: "return_usage"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/custom_filter"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "custom_filter"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.custom_filters`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /api/v1/custom_filter/{filter_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "filter_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: false
+                k: "query"
+                n: "return_usage"
+                or: "return_usage"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/custom_filter/{filter_id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              filter_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "custom_filter"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

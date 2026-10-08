@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "service": {
+      "SERVICE00": {
+        "build": "s1e",
+        "msg": "s1f",
+        "version": "s20",
+        "id": "SERVICE00"
+      },
+      "SERVICE01": {
+        "build": "s3c",
+        "msg": "s3d",
+        "version": "s3e",
+        "id": "SERVICE01"
+      },
+      "SERVICE02": {
+        "build": "s5a",
+        "msg": "s5b",
+        "version": "s5c",
+        "id": "SERVICE02"
+      }
+    }
+  },
+  "new": {
+    "service": {
+      "service_ref01": {
+        "build": "s78",
+        "msg": "s79",
+        "version": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "GET /api/v1/liveness": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/version": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

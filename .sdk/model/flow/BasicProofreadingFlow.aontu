@@ -1,0 +1,18 @@
+# BasicProofreadingFlow
+
+main: kit: flow: BasicProofreadingFlow:
+{
+  entity: "proofreading",
+  kind: "basic",
+  name: "BasicProofreadingFlow",
+  step: [
+    {
+      i: {
+        ref: "proofreading_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicProofreadingFlow"
+}

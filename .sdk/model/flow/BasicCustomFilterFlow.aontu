@@ -1,0 +1,59 @@
+# BasicCustomFilterFlow
+
+main: kit: flow: BasicCustomFilterFlow:
+{
+  entity: "custom_filter",
+  kind: "basic",
+  name: "BasicCustomFilterFlow",
+  step: [
+    {
+      i: {
+        ref: "custom_filter_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "custom_filter_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "custom_filter_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "custom_filter01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "custom_filter_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCustomFilterFlow"
+}

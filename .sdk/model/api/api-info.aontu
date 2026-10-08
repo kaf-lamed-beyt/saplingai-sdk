@@ -1,0 +1,77 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Sapling AI"
+        url: "https://sapling.ai"
+      }
+      description: `Language AI endpoints for grammar checking, AI-content detection, rewriting, moderation, and text analysis.
+
+## Authentication
+
+Every endpoint except the \`service\` health probes requires a Sapling API key, sent either as an \`Authorization: Bearer <key>\` header or as a \`key\` field in the JSON request body (GET/DELETE operations and file uploads take a \`key\` query parameter instead). When both are sent, the body or query \`key\` takes precedence. Create keys at https://sapling.ai/api_settings.
+
+Agents that cannot ask a user for an API key can instead obtain an OAuth access token (authorization code + PKCE S256, scope \`sapling:api\`) from the authorization server described by the \`oauth2\` security scheme, and send it as the \`Authorization: Bearer\` header. Such a token acts on the API key the user picks at consent and is accepted only on the language-tool operations that advertise OAuth security. Other authenticated operations require an API key. Discovery metadata: \`/.well-known/oauth-protected-resource\` (RFC 9728) and \`/.well-known/oauth-authorization-server\` (RFC 8414).
+
+## Usage reporting
+
+Every API-key operation accepts an optional \`return_usage: true\` request field (or \`?return_usage=true\` for GET/DELETE and file uploads). When set, a successful JSON-object response additionally carries \`"usage": {"characters": <n>}\` — the billable character count the request submitted (0 when nothing was billed; the 2.5x logographic-language adjustment is included, and the number is an upper bound on the final charge, since repeat texts inside the billing deduplication window are counted but not re-charged). Existing \`usage\` fields, including the account/status summary and completion token usage, are preserved.
+
+## Batch requests
+
+Operations whose request schema lists a \`texts\` property also accept a batch of 1 to 10 texts in one request: send exactly one of \`text\` or \`texts\`, and the response is \`{"results": [...]}\`, one single-text response per input text in input order.
+
+## Rate limiting
+
+Token-bucket rate-limited operations (those whose responses declare the headers below) carry \`X-RateLimit-Limit\`, \`X-RateLimit-Remaining\`, and \`X-RateLimit-Reset\` headers describing the caller's token bucket — unless the API key itself is configured as unthrottled, in which case no rate-limit headers are emitted. (A deployment that disables API burst limits emits none of them and no bucket 429s; the document it serves reflects that.) \`X-RateLimit-Reset\` is the number of SECONDS until the bucket is full again, not an epoch timestamp. 429 responses additionally carry \`Retry-After\` (seconds) and a numeric \`retry_after\` body field; when \`retry_after\` is absent from a 429 body, the request can never succeed at its current size, so do not retry it unchanged.
+
+## Errors
+
+Errors are JSON objects with a human-readable \`msg\` field and an appropriate HTTP status — including request-validation 400s, auth 401s, unknown paths (404), wrong methods (405), and unexpected 500s. Some operations use an \`error\` field or \`message\`/\`result\` keys instead of \`msg\` (including the 4MB 413 and invalid feedback IDs), and \`/api/v1/edits\` can answer a transient tokenizer outage with an empty JSON array and status 400. Treat the status code as authoritative and see each operation's response schemas for the exact shapes. 5xx/503 responses may carry \`Retry-After\`; honor it before retrying.
+
+The language operations are generated from the same registry that backs the hosted MCP server (https://mcp.sapling.ai), so tool names and their operationIds match. OAuth access tokens issued for that server work only on those operations; every other operation needs an API key. Full response schemas and guides: https://sapling.ai/docs/api`
+      security: {
+        alternatives: [
+          [
+            {
+              in: "query"
+              name: "key"
+              prefix: ""
+              scheme: "apiKeyQuery"
+              type: "apiKey"
+            }
+          ]
+          [
+            {
+              in: "header"
+              name: "Authorization"
+              prefix: "Bearer"
+              scheme: "oauth2"
+              type: "oauth2"
+            }
+          ]
+        ]
+        in: "header"
+        name: "Authorization"
+        prefix: "Bearer"
+        scheme: "bearerAuth"
+        type: "http"
+      }
+      servers: [
+        {
+          description: "The deployment serving this document"
+          url: "https://api.sapling.ai"
+        }
+      ]
+      summary: "Language AI endpoints for grammar checking, AI-content detection, rewriting, moderation, and text analysis."
+      termsOfService: "https://sapling.ai/terms"
+      title: "Sapling AI API"
+      version: "1.4.1"
+      website: "https://sapling.ai/docs/api"
+    }
+  }
+}
+

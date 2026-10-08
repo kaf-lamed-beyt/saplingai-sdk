@@ -1,0 +1,126 @@
+{
+  point: "warning"
+  note: "Points POST /api/v1/reporting/api_endpoint_usage, POST /api/v1/reporting/api_quota_usage, POST /api/v1/reporting/api_usage and POST /api/v1/reporting/api_user_activity on entity=account op=create have the same selector (exist: none), so only POST /api/v1/reporting/api_endpoint_usage is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "account"
+  op: "create"
+  points: [
+    "POST /api/v1/reporting/api_endpoint_usage"
+    "POST /api/v1/reporting/api_quota_usage"
+    "POST /api/v1/reporting/api_usage"
+    "POST /api/v1/reporting/api_user_activity"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /api/v1/classify, POST /api/v1/extract, POST /api/v1/inclusive, POST /api/v1/quality, POST /api/v1/sentiment, POST /api/v1/seo, POST /api/v1/statistics, POST /api/v1/styleguide, POST /api/v1/styleguide/rulesets, POST /api/v1/thesaurus and POST /api/v1/tone on entity=analysi op=create have the same selector (exist: none), so only POST /api/v1/classify is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "analysi"
+  op: "create"
+  points: [
+    "POST /api/v1/classify"
+    "POST /api/v1/extract"
+    "POST /api/v1/inclusive"
+    "POST /api/v1/quality"
+    "POST /api/v1/sentiment"
+    "POST /api/v1/seo"
+    "POST /api/v1/statistics"
+    "POST /api/v1/styleguide"
+    "POST /api/v1/styleguide/rulesets"
+    "POST /api/v1/thesaurus"
+    "POST /api/v1/tone"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /api/v1/aidetect, POST /api/v1/docx-aidetect, POST /api/v1/langdetect, POST /api/v1/ner, POST /api/v1/pdf-aidetect, POST /api/v1/pii, POST /api/v1/profanity and POST /api/v1/safety on entity=detection op=create have the same selector (exist: none), so only POST /api/v1/aidetect is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "detection"
+  op: "create"
+  points: [
+    "POST /api/v1/aidetect"
+    "POST /api/v1/docx-aidetect"
+    "POST /api/v1/langdetect"
+    "POST /api/v1/ner"
+    "POST /api/v1/pdf-aidetect"
+    "POST /api/v1/pii"
+    "POST /api/v1/profanity"
+    "POST /api/v1/safety"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /api/v1/ingest/chunk_html, POST /api/v1/ingest/chunk_text, POST /api/v1/ingest/docx_to_text and POST /api/v1/ingest/pdf_to_text on entity=file op=create have the same selector (exist: none), so only POST /api/v1/ingest/chunk_html is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "file"
+  op: "create"
+  points: [
+    "POST /api/v1/ingest/chunk_html"
+    "POST /api/v1/ingest/chunk_text"
+    "POST /api/v1/ingest/docx_to_text"
+    "POST /api/v1/ingest/pdf_to_text"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /api/v1/complete, POST /api/v1/paraphrase, POST /api/v1/rephrase, POST /api/v1/sentence_split, POST /api/v1/simplify, POST /api/v1/summarize and POST /api/v1/translate on entity=generation op=create have the same selector (exist: none), so only POST /api/v1/complete is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "generation"
+  op: "create"
+  points: [
+    "POST /api/v1/complete"
+    "POST /api/v1/paraphrase"
+    "POST /api/v1/rephrase"
+    "POST /api/v1/sentence_split"
+    "POST /api/v1/simplify"
+    "POST /api/v1/summarize"
+    "POST /api/v1/translate"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /api/v1/edits/{edit_hash}/accept and POST /api/v1/edits/{edit_hash}/reject on entity=proofreading op=create have the same selector (exist: edit_hash), so only POST /api/v1/edits/{edit_hash}/accept is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "proofreading"
+  op: "create"
+  points: [
+    "POST /api/v1/edits/{edit_hash}/accept"
+    "POST /api/v1/edits/{edit_hash}/reject"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points POST /api/v1/edits and POST /api/v1/spellcheck on entity=proofreading op=create have the same selector (exist: none), so only POST /api/v1/edits is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "proofreading"
+  op: "create"
+  points: [
+    "POST /api/v1/edits"
+    "POST /api/v1/spellcheck"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /api/v1/liveness and GET /api/v1/version on entity=service op=load have the same selector (exist: none), so only GET /api/v1/liveness is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "service"
+  op: "load"
+  points: [
+    "GET /api/v1/liveness"
+    "GET /api/v1/version"
+  ]
+
+}

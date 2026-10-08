@@ -1,0 +1,479 @@
+# Entity: generation
+
+main: kit: entity: generation: {
+
+  alias: field: {}
+
+  fields: {
+    characters: {
+      h: "Characters"
+      n: "characters"
+      r: false
+      t: "`$INTEGER`"
+    }
+    context: {
+      h: "Context"
+      n: "context"
+      r: true
+      t: "`$OBJECT`"
+    }
+    formality: {
+      h: "Formality"
+      n: "formality"
+      r: false
+      sh: "Optional register: \"formal\" (vous/Sie/usted) or \"informal\" (tu/du/tú)."
+      t: "`$STRING`"
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: false
+      sh: "Sapling API key."
+      t: "`$STRING`"
+    }
+    lang: {
+      h: "Lang"
+      n: "lang"
+      r: false
+      sh: "ISO 639-1 code used to pick the readability formula for the before/after scores and the billed language."
+      t: "`$STRING`"
+    }
+    length: {
+      h: "Length"
+      n: "length"
+      r: false
+      sh: "Target summary size: \"short\" (1-2 sentences), \"medium\" (one paragraph, the default) or \"long\" (a few short paragraphs)."
+      t: "`$STRING`"
+    }
+    mapping: {
+      h: "Mapping"
+      n: "mapping"
+      r: false
+      sh: "Transformation to apply."
+      t: "`$STRING`"
+    }
+    num_results: {
+      h: "Num Results"
+      n: "num_results"
+      r: false
+      sh: "Number of alternatives to return (default 5)."
+      t: "`$INTEGER`"
+    }
+    preserve_terms: {
+      h: "Preserve Terms"
+      n: "preserve_terms"
+      r: false
+      sh: "Terms the rewrite must keep exactly as written (product names, defined legal terms)."
+      t: "`$ARRAY`"
+    }
+    query: {
+      h: "Query"
+      n: "query"
+      r: true
+      sh: "The partial text to continue, at most 200 characters."
+      t: "`$STRING`"
+    }
+    reading_level: {
+      h: "Reading Level"
+      n: "reading_level"
+      r: false
+      sh: "Target audience: \"plain\" (plain-language style for a general audience, the default), \"elementary\" (~US grade 3-5), \"middle_school\" (~grade 6-8) or \"high_school\" (~grade 9-10)."
+      t: "`$STRING`"
+    }
+    results: {
+      h: "Results"
+      n: "results"
+      r: false
+      sh: "Present only for a batch (`texts`) request: one entry per input text, in input order, each shaped exactly like the single-text response."
+      t: "`$ARRAY`"
+    }
+    return_usage: {
+      h: "Return Usage"
+      n: "return_usage"
+      r: false
+      sh: "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…"
+      t: "`$BOOLEAN`"
+    }
+    session_id: {
+      h: "Session Id"
+      n: "session_id"
+      r: false
+      sh: "Optional session identifier used to group feedback events."
+      t: "`$STRING`"
+    }
+    source_lang: {
+      h: "Source Lang"
+      n: "source_lang"
+      r: false
+      sh: "Optional hint for the source language (same forms as target_lang)."
+      t: "`$STRING`"
+    }
+    target_lang: {
+      h: "Target Lang"
+      n: "target_lang"
+      r: true
+      sh: "Language to translate into: ISO 639 code (\"fr\", \"zh-TW\") or English name (\"French\")."
+      t: "`$STRING`"
+    }
+    tense_mapping: {
+      h: "Tense Mapping"
+      n: "tense_mapping"
+      r: false
+      sh: "Target tense."
+      t: "`$STRING`"
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "The text to process."
+      t: "`$STRING`"
+    }
+    texts: {
+      h: "Texts"
+      n: "texts"
+      r: false
+      sh: "Batch form: 1 to 10 texts, each processed with the same options as a single request."
+      t: "`$ARRAY`"
+    }
+    tone_mapping: {
+      h: "Tone Mapping"
+      n: "tone_mapping"
+      r: false
+      sh: "Target tone."
+      t: "`$STRING`"
+    }
+    usage: {
+      h: "Usage"
+      n: "usage"
+      r: false
+      sh: "Present only when the request sent return_usage: true."
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "generation"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "context"
+            "key"
+            "return_usage"
+            "session_id"
+          ]
+          co: {
+            id: "POST /api/v1/complete/{completion_hash}/accept"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "completion_hash"
+                or: "completion_hash"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/api/v1/complete/{completion_hash}/accept"
+          q: {
+            exist: [
+              "completion_hash"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "complete"
+            }
+            {
+              var: "completion_hash"
+            }
+            {
+              lit: "accept"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "query"
+            "return_usage"
+            "session_id"
+          ]
+          co: {
+            id: "POST /api/v1/complete"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/complete"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "complete"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "mapping"
+            "num_results"
+            "return_usage"
+            "tense_mapping"
+            "text"
+            "tone_mapping"
+          ]
+          co: {
+            id: "POST /api/v1/paraphrase"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/paraphrase"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "paraphrase"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "mapping"
+            "num_results"
+            "return_usage"
+            "tense_mapping"
+            "text"
+            "tone_mapping"
+          ]
+          co: {
+            id: "POST /api/v1/rephrase"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/rephrase"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "rephrase"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.usage`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "session_id"
+            "text"
+          ]
+          co: {
+            id: "POST /api/v1/sentence_split"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/sentence_split"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sentence_split"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "lang"
+            "preserve_terms"
+            "reading_level"
+            "return_usage"
+            "text"
+            "texts"
+          ]
+          co: {
+            id: "POST /api/v1/simplify"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/simplify"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "simplify"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "length"
+            "return_usage"
+            "text"
+            "texts"
+          ]
+          co: {
+            id: "POST /api/v1/summarize"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/summarize"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "summarize"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "formality"
+            "key"
+            "return_usage"
+            "source_lang"
+            "target_lang"
+            "text"
+            "texts"
+          ]
+          co: {
+            id: "POST /api/v1/translate"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/translate"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "translate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,732 @@
+# Entity: analysi
+
+main: kit: entity: analysi: {
+
+  alias: field: {}
+
+  fields: {
+    categories: {
+      h: "Categories"
+      n: "categories"
+      r: false
+      sh: "Categories to check."
+      t: "`$ARRAY`"
+    }
+    characters: {
+      h: "Characters"
+      n: "characters"
+      r: false
+      t: "`$INTEGER`"
+    }
+    context: {
+      h: "Context"
+      n: "context"
+      r: false
+      sh: "Optional guidance (max 500 chars): what the texts are and how to decide borderline cases."
+      t: "`$STRING`"
+    }
+    created: {
+      h: "Created"
+      n: "created"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    created_at: {
+      h: "Created At"
+      n: "created_at"
+      r: false
+      sh: "Naive ISO 8601 timestamp (UTC, no offset)."
+      t: "`$STRING`"
+    }
+    fields: {
+      h: "Fields"
+      n: "fields"
+      r: true
+      sh: "The fields to extract (1-20): field names (<=50 chars), or {name, type, description (<=200 chars), required} objects."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
+    }
+    key: {
+      h: "Key"
+      n: "key"
+      r: false
+      sh: "Sapling API key."
+      t: "`$STRING`"
+    }
+    keywords: {
+      h: "Keywords"
+      n: "keywords"
+      r: false
+      sh: "Target keyword phrases, most important first (max 10)."
+      t: "`$ARRAY`"
+    }
+    labels: {
+      h: "Labels"
+      n: "labels"
+      r: true
+      sh: "The candidate labels (2-20): label names (<=50 chars), or {name, description (<=200 chars)} objects."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
+    }
+    lang: {
+      h: "Lang"
+      n: "lang"
+      r: false
+      sh: "ISO 639-1 language code of the text (default \"en\")."
+      t: "`$STRING`"
+    }
+    multi_label: {
+      h: "Multi Label"
+      n: "multi_label"
+      r: false
+      sh: "true = several labels may apply at once (labels = those scoring >= threshold)."
+      t: "`$BOOLEAN`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        list: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    neighbors: {
+      h: "Neighbors"
+      n: "neighbors"
+      r: false
+      sh: "[similarity, term] pairs."
+      t: "`$ARRAY`"
+    }
+    query: {
+      h: "Query"
+      n: "query"
+      r: true
+      t: "`$STRING`"
+    }
+    results: {
+      h: "Results"
+      n: "results"
+      r: false
+      sh: "Present only for a batch (`texts`) request: one entry per input text, in input order, each shaped exactly like the single-text response."
+      t: "`$ARRAY`"
+    }
+    return_usage: {
+      h: "Return Usage"
+      n: "return_usage"
+      r: false
+      sh: "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…"
+      t: "`$BOOLEAN`"
+    }
+    rubric: {
+      h: "Rubric"
+      n: "rubric"
+      r: false
+      sh: "Also return the LLM rubric: overall + clarity/coherence/correctness/concision scores, summary and quoted issues with suggested rewrites (default false)."
+      t: "`$BOOLEAN`"
+    }
+    rules: {
+      h: "Rules"
+      n: "rules"
+      op: {
+        create: {
+          req: true
+          type: "`$ARRAY`"
+        }
+      }
+      r: false
+      sh: "The style rules to enforce: 1-20 rules, each a rule name string (at most 80 characters) or a {name, description} object (description at most 400 characters adds nuance the model follows)."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
+    }
+    ruleset: {
+      h: "Ruleset"
+      n: "ruleset"
+      r: false
+      sh: "The name of a saved ruleset (created via POST /api/v1/styleguide/rulesets) to check against in place of inline rules."
+      t: "`$STRING`"
+    }
+    sentence_scores: {
+      h: "Sentence Scores"
+      n: "sentence_scores"
+      r: false
+      sh: "Also return a 1-5 score per sentence (default false)."
+      t: "`$BOOLEAN`"
+    }
+    suggestions: {
+      h: "Suggestions"
+      n: "suggestions"
+      r: false
+      sh: "Generate titles/meta descriptions/slug/keywords with the LLM (default true)."
+      t: "`$BOOLEAN`"
+    }
+    synonyms: {
+      h: "Synonyms"
+      n: "synonyms"
+      r: false
+      t: "`$ARRAY`"
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "The text to process."
+      t: "`$STRING`"
+    }
+    texts: {
+      h: "Texts"
+      n: "texts"
+      r: false
+      sh: "Batch form: 1 to 10 texts, each processed with the same options as a single request."
+      t: "`$ARRAY`"
+    }
+    threshold: {
+      h: "Threshold"
+      n: "threshold"
+      r: false
+      sh: "Multi-label cut-off on the per-label score (default 0.5)."
+      t: "`$NUMBER`"
+    }
+    updated_at: {
+      h: "Updated At"
+      n: "updated_at"
+      r: false
+      sh: "Naive ISO 8601 timestamp (UTC, no offset)."
+      t: "`$STRING`"
+    }
+    usage: {
+      h: "Usage"
+      n: "usage"
+      r: false
+      sh: "Present only when the request sent return_usage: true."
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "analysi"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "context"
+            "key"
+            "labels"
+            "multi_label"
+            "return_usage"
+            "text"
+            "texts"
+            "threshold"
+          ]
+          co: {
+            id: "POST /api/v1/classify"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/classify"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "classify"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "context"
+            "fields"
+            "key"
+            "return_usage"
+            "text"
+            "texts"
+          ]
+          co: {
+            id: "POST /api/v1/extract"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/extract"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "extract"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "categories"
+            "key"
+            "return_usage"
+            "text"
+            "texts"
+          ]
+          co: {
+            id: "POST /api/v1/inclusive"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/inclusive"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "inclusive"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "rubric"
+            "sentence_scores"
+            "text"
+            "texts"
+          ]
+          co: {
+            id: "POST /api/v1/quality"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/quality"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quality"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "text"
+          ]
+          co: {
+            id: "POST /api/v1/sentiment"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/sentiment"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sentiment"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "keywords"
+            "lang"
+            "return_usage"
+            "suggestions"
+            "text"
+          ]
+          co: {
+            id: "POST /api/v1/seo"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/seo"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "seo"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.usage`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "lang"
+            "return_usage"
+            "text"
+          ]
+          co: {
+            id: "POST /api/v1/statistics"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/statistics"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "statistics"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.usage`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "rules"
+            "ruleset"
+            "text"
+            "texts"
+          ]
+          co: {
+            id: "POST /api/v1/styleguide"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/styleguide"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "styleguide"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "name"
+            "return_usage"
+            "rules"
+          ]
+          co: {
+            id: "POST /api/v1/styleguide/rulesets"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/styleguide/rulesets"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "styleguide"
+            }
+            {
+              lit: "rulesets"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "query"
+            "return_usage"
+          ]
+          co: {
+            id: "POST /api/v1/thesaurus"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/thesaurus"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "thesaurus"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "key"
+            "return_usage"
+            "text"
+          ]
+          co: {
+            id: "POST /api/v1/tone"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/v1/tone"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tone"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/v1/styleguide/rulesets"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: false
+                k: "query"
+                n: "return_usage"
+                or: "return_usage"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/v1/styleguide/rulesets"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "styleguide"
+            }
+            {
+              lit: "rulesets"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.rulesets`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          bf: [
+            "key"
+            "name"
+            "return_usage"
+          ]
+          co: {
+            id: "DELETE /api/v1/styleguide/rulesets"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/api/v1/styleguide/rulesets"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "v1"
+            }
+            {
+              lit: "styleguide"
+            }
+            {
+              lit: "rulesets"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

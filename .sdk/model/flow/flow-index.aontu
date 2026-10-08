@@ -1,0 +1,12 @@
+# Flows
+
+@"./BasicAccountFlow.aontu"
+@"./BasicAnalysiFlow.aontu"
+@"./BasicCustomFilterFlow.aontu"
+@"./BasicCustomMappingFlow.aontu"
+@"./BasicDetectionFlow.aontu"
+@"./BasicDictionaryFlow.aontu"
+@"./BasicFileFlow.aontu"
+@"./BasicGenerationFlow.aontu"
+@"./BasicProofreadingFlow.aontu"
+@"./BasicServiceFlow.aontu"

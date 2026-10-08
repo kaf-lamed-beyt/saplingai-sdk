@@ -1,0 +1,4773 @@
+{
+  "NAME": "SAPLING-SDK",
+  "Name": "SaplingSdk",
+  "def": "openapi.json",
+  "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": false,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "account": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "accepts": {
+              "a": true,
+              "h": "Accepts",
+              "n": "accepts",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "active_users": {
+              "a": true,
+              "h": "Active Users",
+              "n": "active_users",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "by_api_key": {
+              "a": true,
+              "h": "By Api Key",
+              "n": "by_api_key",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "by_endpoint": {
+              "a": true,
+              "h": "By Endpoint",
+              "n": "by_endpoint",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "currency": {
+              "a": true,
+              "h": "Currency",
+              "n": "currency",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "daily_usage": {
+              "a": true,
+              "h": "Daily Usage",
+              "n": "daily_usage",
+              "r": false,
+              "sh": "Characters per day.",
+              "t": "`$ANY`"
+            },
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "edits_accepted": {
+              "a": true,
+              "h": "Edits Accepted",
+              "n": "edits_accepted",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "edits_ignored": {
+              "a": true,
+              "h": "Edits Ignored",
+              "n": "edits_ignored",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "edits_shown": {
+              "a": true,
+              "h": "Edits Shown",
+              "n": "edits_shown",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "end_date": {
+              "a": true,
+              "h": "End Date",
+              "n": "end_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "end_days_back": {
+              "a": true,
+              "h": "End Days Back",
+              "n": "end_days_back",
+              "r": false,
+              "sh": "Window end, in days before today.",
+              "t": "`$INTEGER`"
+            },
+            "ignores": {
+              "a": true,
+              "h": "Ignores",
+              "n": "ignores",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "interval": {
+              "a": true,
+              "h": "Interval",
+              "n": "interval",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "last_updated": {
+              "a": true,
+              "h": "Last Updated",
+              "n": "last_updated",
+              "r": false,
+              "sh": "ISO timestamp, or null.",
+              "t": "`$ANY`"
+            },
+            "monthly_usage": {
+              "a": true,
+              "h": "Monthly Usage",
+              "n": "monthly_usage",
+              "r": false,
+              "sh": "Characters per month.",
+              "t": "`$ANY`"
+            },
+            "quota": {
+              "a": true,
+              "h": "Quota",
+              "n": "quota",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "start_date": {
+              "a": true,
+              "h": "Start Date",
+              "n": "start_date",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "start_days_back": {
+              "a": true,
+              "h": "Start Days Back",
+              "n": "start_days_back",
+              "r": false,
+              "sh": "Window start, in days before today.",
+              "t": "`$INTEGER`"
+            },
+            "total_characters": {
+              "a": true,
+              "h": "Total Characters",
+              "n": "total_characters",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "total_cost_usd": {
+              "a": true,
+              "h": "Total Cost Usd",
+              "n": "total_cost_usd",
+              "r": false,
+              "t": "`$NUMBER`"
+            },
+            "usage": {
+              "a": true,
+              "h": "Usage",
+              "n": "usage",
+              "r": false,
+              "sh": "Present only when the request sent return_usage: true.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "account",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/account/status",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/account/status",
+                  "q": {
+                    "$action": "status"
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "account"
+                    },
+                    {
+                      "lit": "status"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "end_days_back",
+                    "interval",
+                    "key",
+                    "return_usage",
+                    "start_days_back"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/reporting/api_endpoint_usage",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/reporting/api_endpoint_usage",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "reporting"
+                    },
+                    {
+                      "lit": "api_endpoint_usage"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "end_days_back",
+                    "key",
+                    "return_usage",
+                    "start_days_back"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/reporting/api_quota_usage",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/reporting/api_quota_usage",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "reporting"
+                    },
+                    {
+                      "lit": "api_quota_usage"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "end_days_back",
+                    "key",
+                    "return_usage",
+                    "start_days_back"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/reporting/api_usage",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/reporting/api_usage",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "reporting"
+                    },
+                    {
+                      "lit": "api_usage"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "end_days_back",
+                    "key",
+                    "return_usage",
+                    "start_days_back"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/reporting/api_user_activity",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/reporting/api_user_activity",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "reporting"
+                    },
+                    {
+                      "lit": "api_user_activity"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/v1/account/status",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/v1/account/status",
+                  "q": {
+                    "$action": "status"
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "account"
+                    },
+                    {
+                      "lit": "status"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "analysi": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "categories": {
+              "a": true,
+              "h": "Categories",
+              "n": "categories",
+              "r": false,
+              "sh": "Categories to check.",
+              "t": "`$ARRAY`"
+            },
+            "characters": {
+              "a": true,
+              "h": "Characters",
+              "n": "characters",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "context": {
+              "a": true,
+              "h": "Context",
+              "n": "context",
+              "r": false,
+              "sh": "Optional guidance (max 500 chars): what the texts are and how to decide borderline cases.",
+              "t": "`$STRING`"
+            },
+            "created": {
+              "a": true,
+              "h": "Created",
+              "n": "created",
+              "r": false,
+              "t": "`$BOOLEAN`"
+            },
+            "created_at": {
+              "a": true,
+              "h": "Created At",
+              "n": "created_at",
+              "r": false,
+              "sh": "Naive ISO 8601 timestamp (UTC, no offset).",
+              "t": "`$STRING`"
+            },
+            "fields": {
+              "a": true,
+              "h": "Fields",
+              "n": "fields",
+              "r": true,
+              "sh": "The fields to extract (1-20): field names (<=50 chars), or {name, type, description (<=200 chars), required} objects.",
+              "t": "`$ARRAY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 1
+              }
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "keywords": {
+              "a": true,
+              "h": "Keywords",
+              "n": "keywords",
+              "r": false,
+              "sh": "Target keyword phrases, most important first (max 10).",
+              "t": "`$ARRAY`"
+            },
+            "labels": {
+              "a": true,
+              "h": "Labels",
+              "n": "labels",
+              "r": true,
+              "sh": "The candidate labels (2-20): label names (<=50 chars), or {name, description (<=200 chars)} objects.",
+              "t": "`$ARRAY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 1
+              }
+            },
+            "lang": {
+              "a": true,
+              "h": "Lang",
+              "n": "lang",
+              "r": false,
+              "sh": "ISO 639-1 language code of the text (default \"en\").",
+              "t": "`$STRING`"
+            },
+            "multi_label": {
+              "a": true,
+              "h": "Multi Label",
+              "n": "multi_label",
+              "r": false,
+              "sh": "true = several labels may apply at once (labels = those scoring >= threshold).",
+              "t": "`$BOOLEAN`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "op": {
+                "list": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "neighbors": {
+              "a": true,
+              "h": "Neighbors",
+              "n": "neighbors",
+              "r": false,
+              "sh": "[similarity, term] pairs.",
+              "t": "`$ARRAY`"
+            },
+            "query": {
+              "a": true,
+              "h": "Query",
+              "n": "query",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "results": {
+              "a": true,
+              "h": "Results",
+              "n": "results",
+              "r": false,
+              "sh": "Present only for a batch (`texts`) request: one entry per input text, in input order, each shaped exactly like the single-text response.",
+              "t": "`$ARRAY`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "rubric": {
+              "a": true,
+              "h": "Rubric",
+              "n": "rubric",
+              "r": false,
+              "sh": "Also return the LLM rubric: overall + clarity/coherence/correctness/concision scores, summary and quoted issues with suggested rewrites (default false).",
+              "t": "`$BOOLEAN`"
+            },
+            "rules": {
+              "a": true,
+              "h": "Rules",
+              "n": "rules",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$ARRAY`"
+                }
+              },
+              "r": false,
+              "sh": "The style rules to enforce: 1-20 rules, each a rule name string (at most 80 characters) or a {name, description} object (description at most 400 characters adds nuance the model follows).",
+              "t": "`$ARRAY`",
+              "union": {
+                "branches": 2,
+                "count": 1,
+                "depth": 1
+              }
+            },
+            "ruleset": {
+              "a": true,
+              "h": "Ruleset",
+              "n": "ruleset",
+              "r": false,
+              "sh": "The name of a saved ruleset (created via POST /api/v1/styleguide/rulesets) to check against in place of inline rules.",
+              "t": "`$STRING`"
+            },
+            "sentence_scores": {
+              "a": true,
+              "h": "Sentence Scores",
+              "n": "sentence_scores",
+              "r": false,
+              "sh": "Also return a 1-5 score per sentence (default false).",
+              "t": "`$BOOLEAN`"
+            },
+            "suggestions": {
+              "a": true,
+              "h": "Suggestions",
+              "n": "suggestions",
+              "r": false,
+              "sh": "Generate titles/meta descriptions/slug/keywords with the LLM (default true).",
+              "t": "`$BOOLEAN`"
+            },
+            "synonyms": {
+              "a": true,
+              "h": "Synonyms",
+              "n": "synonyms",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "text": {
+              "a": true,
+              "h": "Text",
+              "n": "text",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": false,
+              "sh": "The text to process.",
+              "t": "`$STRING`"
+            },
+            "texts": {
+              "a": true,
+              "h": "Texts",
+              "n": "texts",
+              "r": false,
+              "sh": "Batch form: 1 to 10 texts, each processed with the same options as a single request.",
+              "t": "`$ARRAY`"
+            },
+            "threshold": {
+              "a": true,
+              "h": "Threshold",
+              "n": "threshold",
+              "r": false,
+              "sh": "Multi-label cut-off on the per-label score (default 0.5).",
+              "t": "`$NUMBER`"
+            },
+            "updated_at": {
+              "a": true,
+              "h": "Updated At",
+              "n": "updated_at",
+              "r": false,
+              "sh": "Naive ISO 8601 timestamp (UTC, no offset).",
+              "t": "`$STRING`"
+            },
+            "usage": {
+              "a": true,
+              "h": "Usage",
+              "n": "usage",
+              "r": false,
+              "sh": "Present only when the request sent return_usage: true.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "analysi",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "context",
+                    "key",
+                    "labels",
+                    "multi_label",
+                    "return_usage",
+                    "text",
+                    "texts",
+                    "threshold"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/classify",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/classify",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "classify"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "context",
+                    "fields",
+                    "key",
+                    "return_usage",
+                    "text",
+                    "texts"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/extract",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/extract",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "extract"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "categories",
+                    "key",
+                    "return_usage",
+                    "text",
+                    "texts"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/inclusive",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/inclusive",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "inclusive"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "rubric",
+                    "sentence_scores",
+                    "text",
+                    "texts"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/quality",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/quality",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "quality"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "text"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/sentiment",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/sentiment",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "sentiment"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "keywords",
+                    "lang",
+                    "return_usage",
+                    "suggestions",
+                    "text"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/seo",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/seo",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "seo"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.usage`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "lang",
+                    "return_usage",
+                    "text"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/statistics",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/statistics",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "statistics"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.usage`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "rules",
+                    "ruleset",
+                    "text",
+                    "texts"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/styleguide",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/styleguide",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "styleguide"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "name",
+                    "return_usage",
+                    "rules"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/styleguide/rulesets",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/styleguide/rulesets",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "styleguide"
+                    },
+                    {
+                      "lit": "rulesets"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "query",
+                    "return_usage"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/thesaurus",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/thesaurus",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "thesaurus"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "text"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/tone",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/tone",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "tone"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/v1/styleguide/rulesets",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/v1/styleguide/rulesets",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "styleguide"
+                    },
+                    {
+                      "lit": "rulesets"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.rulesets`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "name",
+                    "return_usage"
+                  ],
+                  "co": {
+                    "id": "DELETE /api/v1/styleguide/rulesets",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "name",
+                        "or": "name",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/api/v1/styleguide/rulesets",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "styleguide"
+                    },
+                    {
+                      "lit": "rulesets"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "custom_filter": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "case_sensitive": {
+              "a": true,
+              "h": "Case Sensitive",
+              "n": "case_sensitive",
+              "r": false,
+              "sh": "Whether matching is case sensitive.",
+              "t": "`$BOOLEAN`"
+            },
+            "created_at": {
+              "a": true,
+              "h": "Created At",
+              "n": "created_at",
+              "r": false,
+              "sh": "RFC 1123 timestamp, e.g.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "fo": "uuid",
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "inp": {
+              "a": true,
+              "h": "Inp",
+              "n": "inp",
+              "r": false,
+              "sh": "Original text of the suggestion.",
+              "t": "`$STRING`"
+            },
+            "input": {
+              "a": true,
+              "h": "Input",
+              "n": "input",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "out": {
+              "a": true,
+              "h": "Out",
+              "n": "out",
+              "r": false,
+              "sh": "Replacement to suppress.",
+              "t": "`$STRING`"
+            },
+            "output": {
+              "a": true,
+              "h": "Output",
+              "n": "output",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "updated_at": {
+              "a": true,
+              "h": "Updated At",
+              "n": "updated_at",
+              "r": false,
+              "sh": "RFC 1123 timestamp.",
+              "t": "`$STRING`"
+            },
+            "usage": {
+              "a": true,
+              "h": "Usage",
+              "n": "usage",
+              "r": false,
+              "sh": "Present only when the request sent return_usage: true.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "custom_filter",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "case_sensitive",
+                    "inp",
+                    "key",
+                    "out",
+                    "return_usage"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/custom_filter",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/custom_filter",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "custom_filter"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/v1/custom_filter",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/v1/custom_filter",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "custom_filter"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.custom_filters`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /api/v1/custom_filter/{filter_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "filter_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/api/v1/custom_filter/{filter_id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "filter_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "custom_filter"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "custom_mapping": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "case_sensitive": {
+              "a": true,
+              "h": "Case Sensitive",
+              "n": "case_sensitive",
+              "r": false,
+              "sh": "Whether matching is case sensitive.",
+              "t": "`$BOOLEAN`"
+            },
+            "created_at": {
+              "a": true,
+              "h": "Created At",
+              "n": "created_at",
+              "r": false,
+              "sh": "RFC 1123 timestamp, e.g.",
+              "t": "`$STRING`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Shown to the user with the suggestion; null when none was set.",
+              "t": "`$STRING`"
+            },
+            "entry": {
+              "a": true,
+              "h": "Entry",
+              "n": "entry",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "fo": "uuid",
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "mapping": {
+              "a": true,
+              "h": "Mapping",
+              "n": "mapping",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "updated_at": {
+              "a": true,
+              "h": "Updated At",
+              "n": "updated_at",
+              "r": false,
+              "sh": "RFC 1123 timestamp.",
+              "t": "`$STRING`"
+            },
+            "usage": {
+              "a": true,
+              "h": "Usage",
+              "n": "usage",
+              "r": false,
+              "sh": "Present only when the request sent return_usage: true.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "custom_mapping",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "case_sensitive",
+                    "description",
+                    "entry",
+                    "key",
+                    "mapping",
+                    "return_usage"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/custom_mapping",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/custom_mapping",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "custom_mapping"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/v1/custom_mapping",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/v1/custom_mapping",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "custom_mapping"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.custom_mappings`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /api/v1/custom_mapping/{mapping_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "mapping_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/api/v1/custom_mapping/{mapping_id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "mapping_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "custom_mapping"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "detection": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "ai_fraction": {
+              "a": true,
+              "h": "Ai Fraction",
+              "n": "ai_fraction",
+              "r": false,
+              "sh": "Share (0-1) of the text in sentences scoring >= 0.5; reports partially AI-written documents whose overall score stays below 0.5.",
+              "t": "`$NUMBER`"
+            },
+            "characters": {
+              "a": true,
+              "h": "Characters",
+              "n": "characters",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "labels": {
+              "a": true,
+              "h": "Labels",
+              "n": "labels",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "redact": {
+              "a": true,
+              "h": "Redact",
+              "n": "redact",
+              "r": false,
+              "sh": "If true, the response includes redacted_text with every detected entity replaced by its placeholder.",
+              "t": "`$BOOLEAN`"
+            },
+            "results": {
+              "a": true,
+              "h": "Results",
+              "n": "results",
+              "r": false,
+              "sh": "Present only for a batch (`texts`) request: one entry per input text, in input order, each shaped exactly like the single-text response.",
+              "t": "`$ARRAY`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "score": {
+              "a": true,
+              "h": "Score",
+              "n": "score",
+              "r": false,
+              "t": "`$NUMBER`"
+            },
+            "score_string": {
+              "a": true,
+              "h": "Score String",
+              "n": "score_string",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "segments": {
+              "a": true,
+              "h": "Segments",
+              "n": "segments",
+              "r": false,
+              "sh": "Also detect the language of each sentence-ish segment for mixed-language text (default false).",
+              "t": "`$BOOLEAN`"
+            },
+            "sent_scores": {
+              "a": true,
+              "h": "Sent Scores",
+              "n": "sent_scores",
+              "r": false,
+              "sh": "Include per-sentence scores (default true).",
+              "t": "`$BOOLEAN`"
+            },
+            "sentence_scores": {
+              "a": true,
+              "h": "Sentence Scores",
+              "n": "sentence_scores",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "spans": {
+              "a": true,
+              "h": "Spans",
+              "n": "spans",
+              "r": false,
+              "sh": "true = also return the offending passages as spans with offsets and per-passage scores.",
+              "t": "`$BOOLEAN`"
+            },
+            "text": {
+              "a": true,
+              "h": "Text",
+              "n": "text",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": false,
+              "sh": "The text to process.",
+              "t": "`$STRING`"
+            },
+            "texts": {
+              "a": true,
+              "h": "Texts",
+              "n": "texts",
+              "r": false,
+              "sh": "Batch form: 1 to 10 texts, each processed with the same options as a single request.",
+              "t": "`$ARRAY`"
+            },
+            "threshold": {
+              "a": true,
+              "h": "Threshold",
+              "n": "threshold",
+              "r": false,
+              "sh": "Flagging cut-off on each category score (default 0.5).",
+              "t": "`$NUMBER`"
+            },
+            "toks": {
+              "a": true,
+              "h": "Toks",
+              "n": "toks",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "top_k": {
+              "a": true,
+              "h": "Top K",
+              "n": "top_k",
+              "r": false,
+              "sh": "Number of top language candidates to return (default 3).",
+              "t": "`$INTEGER`"
+            },
+            "types": {
+              "a": true,
+              "h": "Types",
+              "n": "types",
+              "r": false,
+              "sh": "Entity types to recognize.",
+              "t": "`$ARRAY`"
+            },
+            "usage": {
+              "a": true,
+              "h": "Usage",
+              "n": "usage",
+              "r": false,
+              "sh": "Present only when the request sent return_usage: true.",
+              "t": "`$OBJECT`"
+            },
+            "version": {
+              "a": true,
+              "h": "Version",
+              "n": "version",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "name": "detection",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "sent_scores",
+                    "text",
+                    "texts"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/aidetect",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/aidetect",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "aidetect"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /api/v1/docx-aidetect",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/docx-aidetect",
+                  "q": {},
+                  "r": {},
+                  "rb": {
+                    "fields": [
+                      {
+                        "binary": true,
+                        "name": "file"
+                      },
+                      {
+                        "binary": true,
+                        "name": "jsonParams"
+                      },
+                      {
+                        "name": "return_usage"
+                      }
+                    ],
+                    "kind": "multipart",
+                    "media": "multipart/form-data"
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "docx-aidetect"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.usage`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "segments",
+                    "text",
+                    "texts",
+                    "top_k"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/langdetect",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/langdetect",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "langdetect"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "text",
+                    "texts",
+                    "types"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/ner",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/ner",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ner"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /api/v1/pdf-aidetect",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/pdf-aidetect",
+                  "q": {},
+                  "r": {},
+                  "rb": {
+                    "fields": [
+                      {
+                        "binary": true,
+                        "name": "file"
+                      },
+                      {
+                        "binary": true,
+                        "name": "jsonParams"
+                      },
+                      {
+                        "name": "return_usage"
+                      }
+                    ],
+                    "kind": "multipart",
+                    "media": "multipart/form-data"
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "pdf-aidetect"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "redact",
+                    "return_usage",
+                    "text",
+                    "types"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/pii",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/pii",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "pii"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.usage`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "text"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/profanity",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/profanity",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "profanity"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "spans",
+                    "text",
+                    "texts",
+                    "threshold"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/safety",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/safety",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "safety"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "dictionary": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "case_sensitive": {
+              "a": true,
+              "h": "Case Sensitive",
+              "n": "case_sensitive",
+              "r": false,
+              "sh": "Whether matching is case sensitive.",
+              "t": "`$BOOLEAN`"
+            },
+            "created_at": {
+              "a": true,
+              "h": "Created At",
+              "n": "created_at",
+              "r": false,
+              "sh": "RFC 1123 timestamp, e.g.",
+              "t": "`$STRING`"
+            },
+            "entry": {
+              "a": true,
+              "h": "Entry",
+              "n": "entry",
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "fo": "uuid",
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "updated_at": {
+              "a": true,
+              "h": "Updated At",
+              "n": "updated_at",
+              "r": false,
+              "sh": "RFC 1123 timestamp.",
+              "t": "`$STRING`"
+            },
+            "usage": {
+              "a": true,
+              "h": "Usage",
+              "n": "usage",
+              "r": false,
+              "sh": "Present only when the request sent return_usage: true.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "dictionary",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "case_sensitive",
+                    "entry",
+                    "key",
+                    "return_usage"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/dictionary",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/dictionary",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dictionary"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/v1/dictionary",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/v1/dictionary",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dictionary"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /api/v1/dictionary/{entry_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "entry_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/api/v1/dictionary/{entry_id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "entry_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dictionary"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "file": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "chunks": {
+              "a": true,
+              "h": "Chunks",
+              "n": "chunks",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "html": {
+              "a": true,
+              "h": "Html",
+              "n": "html",
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "max_length": {
+              "a": true,
+              "h": "Max Length",
+              "n": "max_length",
+              "r": true,
+              "sh": "Maximum chunk length in characters.",
+              "t": "`$INTEGER`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "step_size": {
+              "a": true,
+              "h": "Step Size",
+              "n": "step_size",
+              "r": false,
+              "sh": "Characters to advance between chunk starts; 0 means 10% of max_length.",
+              "t": "`$INTEGER`"
+            },
+            "text": {
+              "a": true,
+              "h": "Text",
+              "n": "text",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": true,
+              "t": "`$STRING`"
+            },
+            "usage": {
+              "a": true,
+              "h": "Usage",
+              "n": "usage",
+              "r": false,
+              "sh": "Present only when the request sent return_usage: true.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "file",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "html",
+                    "key",
+                    "max_length",
+                    "return_usage",
+                    "step_size"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/ingest/chunk_html",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/ingest/chunk_html",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ingest"
+                    },
+                    {
+                      "lit": "chunk_html"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "max_length",
+                    "return_usage",
+                    "step_size",
+                    "text"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/ingest/chunk_text",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/ingest/chunk_text",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ingest"
+                    },
+                    {
+                      "lit": "chunk_text"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /api/v1/ingest/docx_to_text",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/ingest/docx_to_text",
+                  "q": {},
+                  "r": {},
+                  "rb": {
+                    "fields": [
+                      {
+                        "binary": true,
+                        "name": "file"
+                      },
+                      {
+                        "binary": true,
+                        "name": "jsonParams"
+                      },
+                      {
+                        "name": "return_usage"
+                      }
+                    ],
+                    "kind": "multipart",
+                    "media": "multipart/form-data"
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ingest"
+                    },
+                    {
+                      "lit": "docx_to_text"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /api/v1/ingest/pdf_to_text",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "return_usage",
+                        "or": "return_usage",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/ingest/pdf_to_text",
+                  "q": {},
+                  "r": {},
+                  "rb": {
+                    "fields": [
+                      {
+                        "binary": true,
+                        "name": "file"
+                      },
+                      {
+                        "binary": true,
+                        "name": "jsonParams"
+                      },
+                      {
+                        "name": "return_usage"
+                      }
+                    ],
+                    "kind": "multipart",
+                    "media": "multipart/form-data"
+                  },
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ingest"
+                    },
+                    {
+                      "lit": "pdf_to_text"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "generation": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "characters": {
+              "a": true,
+              "h": "Characters",
+              "n": "characters",
+              "r": false,
+              "t": "`$INTEGER`"
+            },
+            "context": {
+              "a": true,
+              "h": "Context",
+              "n": "context",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "formality": {
+              "a": true,
+              "h": "Formality",
+              "n": "formality",
+              "r": false,
+              "sh": "Optional register: \"formal\" (vous/Sie/usted) or \"informal\" (tu/du/tú).",
+              "t": "`$STRING`"
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "lang": {
+              "a": true,
+              "h": "Lang",
+              "n": "lang",
+              "r": false,
+              "sh": "ISO 639-1 code used to pick the readability formula for the before/after scores and the billed language.",
+              "t": "`$STRING`"
+            },
+            "length": {
+              "a": true,
+              "h": "Length",
+              "n": "length",
+              "r": false,
+              "sh": "Target summary size: \"short\" (1-2 sentences), \"medium\" (one paragraph, the default) or \"long\" (a few short paragraphs).",
+              "t": "`$STRING`"
+            },
+            "mapping": {
+              "a": true,
+              "h": "Mapping",
+              "n": "mapping",
+              "r": false,
+              "sh": "Transformation to apply.",
+              "t": "`$STRING`"
+            },
+            "num_results": {
+              "a": true,
+              "h": "Num Results",
+              "n": "num_results",
+              "r": false,
+              "sh": "Number of alternatives to return (default 5).",
+              "t": "`$INTEGER`"
+            },
+            "preserve_terms": {
+              "a": true,
+              "h": "Preserve Terms",
+              "n": "preserve_terms",
+              "r": false,
+              "sh": "Terms the rewrite must keep exactly as written (product names, defined legal terms).",
+              "t": "`$ARRAY`"
+            },
+            "query": {
+              "a": true,
+              "h": "Query",
+              "n": "query",
+              "r": true,
+              "sh": "The partial text to continue, at most 200 characters.",
+              "t": "`$STRING`"
+            },
+            "reading_level": {
+              "a": true,
+              "h": "Reading Level",
+              "n": "reading_level",
+              "r": false,
+              "sh": "Target audience: \"plain\" (plain-language style for a general audience, the default), \"elementary\" (~US grade 3-5), \"middle_school\" (~grade 6-8) or \"high_school\" (~grade 9-10).",
+              "t": "`$STRING`"
+            },
+            "results": {
+              "a": true,
+              "h": "Results",
+              "n": "results",
+              "r": false,
+              "sh": "Present only for a batch (`texts`) request: one entry per input text, in input order, each shaped exactly like the single-text response.",
+              "t": "`$ARRAY`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "session_id": {
+              "a": true,
+              "h": "Session Id",
+              "n": "session_id",
+              "r": false,
+              "sh": "Optional session identifier used to group feedback events.",
+              "t": "`$STRING`"
+            },
+            "source_lang": {
+              "a": true,
+              "h": "Source Lang",
+              "n": "source_lang",
+              "r": false,
+              "sh": "Optional hint for the source language (same forms as target_lang).",
+              "t": "`$STRING`"
+            },
+            "target_lang": {
+              "a": true,
+              "h": "Target Lang",
+              "n": "target_lang",
+              "r": true,
+              "sh": "Language to translate into: ISO 639 code (\"fr\", \"zh-TW\") or English name (\"French\").",
+              "t": "`$STRING`"
+            },
+            "tense_mapping": {
+              "a": true,
+              "h": "Tense Mapping",
+              "n": "tense_mapping",
+              "r": false,
+              "sh": "Target tense.",
+              "t": "`$STRING`"
+            },
+            "text": {
+              "a": true,
+              "h": "Text",
+              "n": "text",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "r": true,
+              "sh": "The text to process.",
+              "t": "`$STRING`"
+            },
+            "texts": {
+              "a": true,
+              "h": "Texts",
+              "n": "texts",
+              "r": false,
+              "sh": "Batch form: 1 to 10 texts, each processed with the same options as a single request.",
+              "t": "`$ARRAY`"
+            },
+            "tone_mapping": {
+              "a": true,
+              "h": "Tone Mapping",
+              "n": "tone_mapping",
+              "r": false,
+              "sh": "Target tone.",
+              "t": "`$STRING`"
+            },
+            "usage": {
+              "a": true,
+              "h": "Usage",
+              "n": "usage",
+              "r": false,
+              "sh": "Present only when the request sent return_usage: true.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "generation",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "context",
+                    "key",
+                    "return_usage",
+                    "session_id"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/complete/{completion_hash}/accept",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "completion_hash",
+                        "or": "completion_hash",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/complete/{completion_hash}/accept",
+                  "q": {
+                    "exist": [
+                      "completion_hash"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "complete"
+                    },
+                    {
+                      "var": "completion_hash"
+                    },
+                    {
+                      "lit": "accept"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "query",
+                    "return_usage",
+                    "session_id"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/complete",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/complete",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "complete"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "mapping",
+                    "num_results",
+                    "return_usage",
+                    "tense_mapping",
+                    "text",
+                    "tone_mapping"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/paraphrase",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/paraphrase",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "paraphrase"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "mapping",
+                    "num_results",
+                    "return_usage",
+                    "tense_mapping",
+                    "text",
+                    "tone_mapping"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/rephrase",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/rephrase",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "rephrase"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body.usage`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "session_id",
+                    "text"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/sentence_split",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/sentence_split",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "sentence_split"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "lang",
+                    "preserve_terms",
+                    "reading_level",
+                    "return_usage",
+                    "text",
+                    "texts"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/simplify",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/simplify",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "simplify"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "length",
+                    "return_usage",
+                    "text",
+                    "texts"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/summarize",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/summarize",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "summarize"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "formality",
+                    "key",
+                    "return_usage",
+                    "source_lang",
+                    "target_lang",
+                    "text",
+                    "texts"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/translate",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/translate",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "translate"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "proofreading": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "auto_apply": {
+              "a": true,
+              "h": "Auto Apply",
+              "n": "auto_apply",
+              "r": false,
+              "sh": "If true, the response includes applied_text with all edits applied to the input.",
+              "t": "`$BOOLEAN`"
+            },
+            "include_error_categories": {
+              "a": true,
+              "h": "Include Error Categories",
+              "n": "include_error_categories",
+              "r": false,
+              "sh": "Defaults to true.",
+              "t": "`$BOOLEAN`"
+            },
+            "key": {
+              "a": true,
+              "h": "Key",
+              "n": "key",
+              "r": false,
+              "sh": "Sapling API key.",
+              "t": "`$STRING`"
+            },
+            "lang": {
+              "a": true,
+              "h": "Lang",
+              "n": "lang",
+              "r": false,
+              "sh": "ISO 639-1 language code of the text (e.g.",
+              "t": "`$STRING`"
+            },
+            "return_usage": {
+              "a": true,
+              "h": "Return Usage",
+              "n": "return_usage",
+              "r": false,
+              "sh": "When true, a successful JSON-object response additionally carries \"usage\": {\"characters\": <n>} — the billable character count this request submitted (0 for unbilled requests; the 2.5x adjustment for logographic languages is included, so CJ…",
+              "t": "`$BOOLEAN`"
+            },
+            "session_id": {
+              "a": true,
+              "h": "Session Id",
+              "n": "session_id",
+              "r": false,
+              "sh": "Optional session identifier used to group feedback events.",
+              "t": "`$STRING`"
+            },
+            "text": {
+              "a": true,
+              "h": "Text",
+              "n": "text",
+              "r": true,
+              "sh": "The text to process.",
+              "t": "`$STRING`"
+            },
+            "user_id": {
+              "a": true,
+              "h": "User Id",
+              "n": "user_id",
+              "r": false,
+              "sh": "Your identifier for the end user.",
+              "t": "`$STRING`"
+            },
+            "variety": {
+              "a": true,
+              "h": "Variety",
+              "n": "variety",
+              "r": false,
+              "sh": "English variety to enforce, e.g.",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "proofreading",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "session_id",
+                    "user_id"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/edits/{edit_hash}/accept",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "edit_hash",
+                        "or": "edit_hash",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/edits/{edit_hash}/accept",
+                  "q": {
+                    "exist": [
+                      "edit_hash"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "edits"
+                    },
+                    {
+                      "var": "edit_hash"
+                    },
+                    {
+                      "lit": "accept"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "return_usage",
+                    "session_id",
+                    "user_id"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/edits/{edit_hash}/reject",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "edit_hash",
+                        "or": "edit_hash",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/edits/{edit_hash}/reject",
+                  "q": {
+                    "exist": [
+                      "edit_hash"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "edits"
+                    },
+                    {
+                      "var": "edit_hash"
+                    },
+                    {
+                      "lit": "reject"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "auto_apply",
+                    "include_error_categories",
+                    "key",
+                    "lang",
+                    "return_usage",
+                    "session_id",
+                    "text",
+                    "variety"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/edits",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/edits",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "edits"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "bf": [
+                    "key",
+                    "lang",
+                    "return_usage",
+                    "session_id",
+                    "text"
+                  ],
+                  "co": {
+                    "id": "POST /api/v1/spellcheck",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/v1/spellcheck",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "spellcheck"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "service": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "build": {
+              "a": true,
+              "h": "Build",
+              "n": "build",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "msg": {
+              "a": true,
+              "h": "Msg",
+              "n": "msg",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "version": {
+              "a": true,
+              "h": "Version",
+              "n": "version",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "name": "service",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/v1/liveness",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/v1/liveness",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "liveness"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/v1/version",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/v1/version",
+                  "q": {},
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "api"
+                    },
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "version"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicAccountFlow": {
+          "active": true,
+          "entity": "account",
+          "key$": "BasicAccountFlow",
+          "kind": "basic",
+          "name": "BasicAccountFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "account_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "account_ref01",
+                "srcdatavar": "account_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-account_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicAnalysiFlow": {
+          "active": true,
+          "entity": "analysi",
+          "key$": "BasicAnalysiFlow",
+          "kind": "basic",
+          "name": "BasicAnalysiFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "analysi_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "analysi_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "analysi_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {},
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "analysi_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCustomFilterFlow": {
+          "active": true,
+          "entity": "custom_filter",
+          "key$": "BasicCustomFilterFlow",
+          "kind": "basic",
+          "name": "BasicCustomFilterFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "custom_filter_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "custom_filter_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "custom_filter_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "custom_filter01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "custom_filter_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCustomMappingFlow": {
+          "active": true,
+          "entity": "custom_mapping",
+          "key$": "BasicCustomMappingFlow",
+          "kind": "basic",
+          "name": "BasicCustomMappingFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "custom_mapping_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "custom_mapping_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "custom_mapping_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "custom_mapping01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "custom_mapping_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicDetectionFlow": {
+          "active": true,
+          "entity": "detection",
+          "key$": "BasicDetectionFlow",
+          "kind": "basic",
+          "name": "BasicDetectionFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "detection_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicDictionaryFlow": {
+          "active": true,
+          "entity": "dictionary",
+          "key$": "BasicDictionaryFlow",
+          "kind": "basic",
+          "name": "BasicDictionaryFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "dictionary_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "dictionary_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "dictionary_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "dictionary01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "dictionary_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicFileFlow": {
+          "active": true,
+          "entity": "file",
+          "key$": "BasicFileFlow",
+          "kind": "basic",
+          "name": "BasicFileFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "file_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicGenerationFlow": {
+          "active": true,
+          "entity": "generation",
+          "key$": "BasicGenerationFlow",
+          "kind": "basic",
+          "name": "BasicGenerationFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "generation_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicProofreadingFlow": {
+          "active": true,
+          "entity": "proofreading",
+          "key$": "BasicProofreadingFlow",
+          "kind": "basic",
+          "name": "BasicProofreadingFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "proofreading_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicServiceFlow": {
+          "active": true,
+          "entity": "service",
+          "key$": "BasicServiceFlow",
+          "kind": "basic",
+          "name": "BasicServiceFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "service_ref01",
+                "srcdatavar": "service_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-service_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "info": {
+        "contact": {
+          "name": "Sapling AI",
+          "url": "https://sapling.ai"
+        },
+        "description": "Language AI endpoints for grammar checking, AI-content detection, rewriting, moderation, and text analysis.\n\n## Authentication\n\nEvery endpoint except the `service` health probes requires a Sapling API key, sent either as an `Authorization: Bearer <key>` header or as a `key` field in the JSON request body (GET/DELETE operations and file uploads take a `key` query parameter instead). When both are sent, the body or query `key` takes precedence. Create keys at https://sapling.ai/api_settings.\n\nAgents that cannot ask a user for an API key can instead obtain an OAuth access token (authorization code + PKCE S256, scope `sapling:api`) from the authorization server described by the `oauth2` security scheme, and send it as the `Authorization: Bearer` header. Such a token acts on the API key the user picks at consent and is accepted only on the language-tool operations that advertise OAuth security. Other authenticated operations require an API key. Discovery metadata: `/.well-known/oauth-protected-resource` (RFC 9728) and `/.well-known/oauth-authorization-server` (RFC 8414).\n\n## Usage reporting\n\nEvery API-key operation accepts an optional `return_usage: true` request field (or `?return_usage=true` for GET/DELETE and file uploads). When set, a successful JSON-object response additionally carries `\"usage\": {\"characters\": <n>}` — the billable character count the request submitted (0 when nothing was billed; the 2.5x logographic-language adjustment is included, and the number is an upper bound on the final charge, since repeat texts inside the billing deduplication window are counted but not re-charged). Existing `usage` fields, including the account/status summary and completion token usage, are preserved.\n\n## Batch requests\n\nOperations whose request schema lists a `texts` property also accept a batch of 1 to 10 texts in one request: send exactly one of `text` or `texts`, and the response is `{\"results\": [...]}`, one single-text response per input text in input order.\n\n## Rate limiting\n\nToken-bucket rate-limited operations (those whose responses declare the headers below) carry `X-RateLimit-Limit`, `X-RateLimit-Remaining`, and `X-RateLimit-Reset` headers describing the caller's token bucket — unless the API key itself is configured as unthrottled, in which case no rate-limit headers are emitted. (A deployment that disables API burst limits emits none of them and no bucket 429s; the document it serves reflects that.) `X-RateLimit-Reset` is the number of SECONDS until the bucket is full again, not an epoch timestamp. 429 responses additionally carry `Retry-After` (seconds) and a numeric `retry_after` body field; when `retry_after` is absent from a 429 body, the request can never succeed at its current size, so do not retry it unchanged.\n\n## Errors\n\nErrors are JSON objects with a human-readable `msg` field and an appropriate HTTP status — including request-validation 400s, auth 401s, unknown paths (404), wrong methods (405), and unexpected 500s. Some operations use an `error` field or `message`/`result` keys instead of `msg` (including the 4MB 413 and invalid feedback IDs), and `/api/v1/edits` can answer a transient tokenizer outage with an empty JSON array and status 400. Treat the status code as authoritative and see each operation's response schemas for the exact shapes. 5xx/503 responses may carry `Retry-After`; honor it before retrying.\n\nThe language operations are generated from the same registry that backs the hosted MCP server (https://mcp.sapling.ai), so tool names and their operationIds match. OAuth access tokens issued for that server work only on those operations; every other operation needs an API key. Full response schemas and guides: https://sapling.ai/docs/api",
+        "security": {
+          "alternatives": [
+            [
+              {
+                "in": "query",
+                "name": "key",
+                "prefix": "",
+                "scheme": "apiKeyQuery",
+                "type": "apiKey"
+              }
+            ],
+            [
+              {
+                "in": "header",
+                "name": "Authorization",
+                "prefix": "Bearer",
+                "scheme": "oauth2",
+                "type": "oauth2"
+              }
+            ]
+          ],
+          "in": "header",
+          "name": "Authorization",
+          "prefix": "Bearer",
+          "scheme": "bearerAuth",
+          "type": "http"
+        },
+        "servers": [
+          {
+            "description": "The deployment serving this document",
+            "url": "https://api.sapling.ai"
+          }
+        ],
+        "summary": "Language AI endpoints for grammar checking, AI-content detection, rewriting, moderation, and text analysis.",
+        "termsOfService": "https://sapling.ai/terms",
+        "title": "Sapling AI API",
+        "version": "1.4.1",
+        "website": "https://sapling.ai/docs/api"
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,patch,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "publisher": {
+        "name": "",
+        "security": "",
+        "url": ""
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "sapling-sdk",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      },
+      "text": {
+        "about_md": "",
+        "docs_url": "",
+        "entity_desc": {},
+        "homepage": "",
+        "meta_source": "",
+        "summary": "",
+        "tagline": "",
+        "title": "",
+        "website": ""
+      }
+    }
+  },
+  "name": "sapling-sdk",
+  "name-": "sapling-sdk",
+  "name_": "sapling_sdk",
+  "name__orig": "sapling-sdk",
+  "origin": "voxgig-sdk"
+}

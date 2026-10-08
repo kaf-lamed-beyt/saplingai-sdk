@@ -1,0 +1,150 @@
+{
+  "existing": {
+    "generation": {
+      "GENERATION00": {
+        "characters": 210,
+        "context": {},
+        "formality": "sd4",
+        "key": "sd5",
+        "lang": "sd6",
+        "length": "sd7",
+        "mapping": "sd8",
+        "num_results": 217,
+        "preserve_terms": [],
+        "query": "sdb",
+        "reading_level": "sdc",
+        "results": [],
+        "return_usage": true,
+        "session_id": "SESSION01",
+        "source_lang": "se0",
+        "target_lang": "se1",
+        "tense_mapping": "se2",
+        "text": "se3",
+        "texts": [],
+        "tone_mapping": "se5",
+        "usage": {},
+        "completion_hash": "COMPLETION_HASH01",
+        "id": "GENERATION00"
+      },
+      "GENERATION01": {
+        "characters": 420,
+        "context": {},
+        "formality": "s1a6",
+        "key": "s1a7",
+        "lang": "s1a8",
+        "length": "s1a9",
+        "mapping": "s1aa",
+        "num_results": 427,
+        "preserve_terms": [],
+        "query": "s1ad",
+        "reading_level": "s1ae",
+        "results": [],
+        "return_usage": true,
+        "session_id": "SESSION01",
+        "source_lang": "s1b2",
+        "target_lang": "s1b3",
+        "tense_mapping": "s1b4",
+        "text": "s1b5",
+        "texts": [],
+        "tone_mapping": "s1b7",
+        "usage": {},
+        "completion_hash": "COMPLETION_HASH01",
+        "id": "GENERATION01"
+      },
+      "GENERATION02": {
+        "characters": 630,
+        "context": {},
+        "formality": "s278",
+        "key": "s279",
+        "lang": "s27a",
+        "length": "s27b",
+        "mapping": "s27c",
+        "num_results": 637,
+        "preserve_terms": [],
+        "query": "s27f",
+        "reading_level": "s280",
+        "results": [],
+        "return_usage": true,
+        "session_id": "SESSION01",
+        "source_lang": "s284",
+        "target_lang": "s285",
+        "tense_mapping": "s286",
+        "text": "s287",
+        "texts": [],
+        "tone_mapping": "s289",
+        "usage": {},
+        "completion_hash": "COMPLETION_HASH01",
+        "id": "GENERATION02"
+      }
+    }
+  },
+  "new": {
+    "generation": {
+      "generation_ref01": {
+        "characters": 840,
+        "context": {},
+        "formality": "s34a",
+        "key": "s34b",
+        "lang": "s34c",
+        "length": "s34d",
+        "mapping": "s34e",
+        "num_results": 847,
+        "preserve_terms": [],
+        "query": "s351",
+        "reading_level": "s352",
+        "results": [],
+        "return_usage": true,
+        "session_id": "SESSION01",
+        "source_lang": "s356",
+        "target_lang": "s357",
+        "tense_mapping": "s358",
+        "text": "s359",
+        "texts": [],
+        "tone_mapping": "s35b",
+        "usage": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/complete/{completion_hash}/accept": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/complete": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/paraphrase": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/rephrase": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/sentence_split": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/simplify": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/summarize": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/translate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

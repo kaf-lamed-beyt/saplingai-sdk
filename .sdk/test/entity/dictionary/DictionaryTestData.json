@@ -1,0 +1,66 @@
+{
+  "existing": {
+    "dictionary": {
+      "DICTIONARY00": {
+        "case_sensitive": true,
+        "created_at": "s51",
+        "entry": "s52",
+        "id": "DICTIONARY00",
+        "key": "s54",
+        "return_usage": false,
+        "updated_at": "s56",
+        "usage": {}
+      },
+      "DICTIONARY01": {
+        "case_sensitive": true,
+        "created_at": "sa1",
+        "entry": "sa2",
+        "id": "DICTIONARY01",
+        "key": "sa4",
+        "return_usage": false,
+        "updated_at": "sa6",
+        "usage": {}
+      },
+      "DICTIONARY02": {
+        "case_sensitive": true,
+        "created_at": "sf1",
+        "entry": "sf2",
+        "id": "DICTIONARY02",
+        "key": "sf4",
+        "return_usage": false,
+        "updated_at": "sf6",
+        "usage": {}
+      }
+    }
+  },
+  "new": {
+    "dictionary": {
+      "dictionary_ref01": {
+        "case_sensitive": true,
+        "created_at": "s141",
+        "entry": "s142",
+        "key": "s144",
+        "return_usage": false,
+        "updated_at": "s146",
+        "usage": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/dictionary": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/dictionary": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/dictionary/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

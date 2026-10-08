@@ -1,0 +1,18 @@
+# BasicFileFlow
+
+main: kit: flow: BasicFileFlow:
+{
+  entity: "file",
+  kind: "basic",
+  name: "BasicFileFlow",
+  step: [
+    {
+      i: {
+        ref: "file_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicFileFlow"
+}

@@ -1,0 +1,78 @@
+{
+  "existing": {
+    "custom_filter": {
+      "CUSTOM_FILTER00": {
+        "case_sensitive": true,
+        "created_at": "s6f",
+        "id": "CUSTOM_FILTER00",
+        "inp": "s71",
+        "input": "s72",
+        "key": "s73",
+        "out": "s74",
+        "output": "s75",
+        "return_usage": true,
+        "updated_at": "s77",
+        "usage": {}
+      },
+      "CUSTOM_FILTER01": {
+        "case_sensitive": true,
+        "created_at": "sdd",
+        "id": "CUSTOM_FILTER01",
+        "inp": "sdf",
+        "input": "se0",
+        "key": "se1",
+        "out": "se2",
+        "output": "se3",
+        "return_usage": true,
+        "updated_at": "se5",
+        "usage": {}
+      },
+      "CUSTOM_FILTER02": {
+        "case_sensitive": true,
+        "created_at": "s14b",
+        "id": "CUSTOM_FILTER02",
+        "inp": "s14d",
+        "input": "s14e",
+        "key": "s14f",
+        "out": "s150",
+        "output": "s151",
+        "return_usage": true,
+        "updated_at": "s153",
+        "usage": {}
+      }
+    }
+  },
+  "new": {
+    "custom_filter": {
+      "custom_filter_ref01": {
+        "case_sensitive": true,
+        "created_at": "s1b9",
+        "inp": "s1bb",
+        "input": "s1bc",
+        "key": "s1bd",
+        "out": "s1be",
+        "output": "s1bf",
+        "return_usage": true,
+        "updated_at": "s1c1",
+        "usage": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/custom_filter": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /api/v1/custom_filter": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /api/v1/custom_filter/{filter_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

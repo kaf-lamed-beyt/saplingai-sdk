@@ -1,0 +1,147 @@
+{
+  "existing": {
+    "detection": {
+      "DETECTION00": {
+        "ai_fraction": 210,
+        "characters": 211,
+        "key": "sd4",
+        "labels": [],
+        "redact": true,
+        "results": [],
+        "return_usage": true,
+        "score": 217,
+        "score_string": "sda",
+        "segments": false,
+        "sent_scores": true,
+        "sentence_scores": [],
+        "spans": true,
+        "text": "sdf",
+        "texts": [],
+        "threshold": 225,
+        "toks": [],
+        "top_k": 227,
+        "types": [],
+        "usage": {},
+        "version": "se6",
+        "id": "DETECTION00"
+      },
+      "DETECTION01": {
+        "ai_fraction": 420,
+        "characters": 421,
+        "key": "s1a6",
+        "labels": [],
+        "redact": true,
+        "results": [],
+        "return_usage": true,
+        "score": 427,
+        "score_string": "s1ac",
+        "segments": false,
+        "sent_scores": true,
+        "sentence_scores": [],
+        "spans": true,
+        "text": "s1b1",
+        "texts": [],
+        "threshold": 435,
+        "toks": [],
+        "top_k": 437,
+        "types": [],
+        "usage": {},
+        "version": "s1b8",
+        "id": "DETECTION01"
+      },
+      "DETECTION02": {
+        "ai_fraction": 630,
+        "characters": 631,
+        "key": "s278",
+        "labels": [],
+        "redact": true,
+        "results": [],
+        "return_usage": true,
+        "score": 637,
+        "score_string": "s27e",
+        "segments": false,
+        "sent_scores": true,
+        "sentence_scores": [],
+        "spans": true,
+        "text": "s283",
+        "texts": [],
+        "threshold": 645,
+        "toks": [],
+        "top_k": 647,
+        "types": [],
+        "usage": {},
+        "version": "s28a",
+        "id": "DETECTION02"
+      }
+    }
+  },
+  "new": {
+    "detection": {
+      "detection_ref01": {
+        "ai_fraction": 840,
+        "characters": 841,
+        "key": "s34a",
+        "labels": [],
+        "redact": true,
+        "results": [],
+        "return_usage": true,
+        "score": 847,
+        "score_string": "s350",
+        "segments": false,
+        "sent_scores": true,
+        "sentence_scores": [],
+        "spans": true,
+        "text": "s355",
+        "texts": [],
+        "threshold": 855,
+        "toks": [],
+        "top_k": 857,
+        "types": [],
+        "usage": {},
+        "version": "s35c"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/v1/aidetect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/docx-aidetect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/langdetect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/ner": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/pdf-aidetect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/pii": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/profanity": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /api/v1/safety": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}
